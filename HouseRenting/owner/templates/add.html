@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+  rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+  crossorigin="anonymous"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"
+        integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+
+    <!-- Tempus Dominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+        integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+        integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+    <title>Property Page</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+
+</head>
+<style>
+    nav {
+        background-color: #DC3445;
+    }
+    #intro {
+        background-image: url("{% static 'blur10.jpg' %}");
+        height: 100%;
+
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+</style>
+
+<body id='intro'>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding-top: 8%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(189, 179, 179, 0.918);
+           
+            align-items: center;
+            /* margin-left: 60%; */
+            border-radius: 10px;
+            box-shadow: inset -2px 2px 2px white;
+            padding: 1rem;
+        }
+
+        .form-title {
+            font-size: 26px;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 6px;
+            color: black;
+            text-shadow: 2px 2px 5px grey;
+            border-bottom: solid 1px white;
+        }
+
+        .u-type {
+            color: black;
+            font-size: 17px;
+            font-weight: 400;
+            width: 100%;
+            padding: 0 20px 0 25px;
+        }
+
+        .main-user-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .user-input-box:nth-child(2n) {
+            justify-content: end;
+
+        }
+
+        .user-input-box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            padding: 10px;
+
+        }
+
+        .user-input-box label {
+            width: 95%;
+            color: black;
+            font-size: 20px;
+            font-weight: 400;
+            margin: 5px 0;
+        }
+
+        .user-input-box input {
+            height: 40px;
+            width: 95%;
+            border-radius: 7px;
+            outline: none;
+            border: 1px solid grey;
+            padding: 0 10px;
+        }
+
+
+        .form-submit-btn {
+            margin: 20px;
+        }
+
+        .form-submit-btn button {
+            display: block;
+            width: 50%;
+            margin:0 auto;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            color: rgb(255, 254, 254);
+            background: rgba(255, 108, 108, 0.899);
+        }
+
+        .form-submit-btn button:hover {
+            background: rgba(255, 60, 60, 0.992);
+            color: rgb(255, 255, 255);
+        }
+
+        a:hover,
+        a {
+            color: white;
+            font-size: 15px;
+        }
+        .cls1{
+            margin-left: 2rem;
+        }
+        @media(max-width: 600px) {
+            .container {
+                min-width: 280px;
+                margin-top: 30%;
+                margin-left: 2%;
+            }
+
+            .user-input-box {
+                margin-bottom: 12px;
+                width: 100%;
+            }
+
+            .input-group date {
+                margin-bottom: 12px;
+                width: 100%;
+            }
+
+            .user-input-box:nth-child(2n) {
+                justify-content: space-between;
+            }
+
+            .input-group:nth-child(2n) {
+                justify-content: space-between;
+            }
+
+            .u-type {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .main-user-info {
+                max-height: 380px;
+                overflow: auto;
+            }
+
+            .main-user-info::-webkit-scrollbar {
+                width: 0;
+            }
+            .cls1{
+                width: 70%;
+            }
+        }
+    </style>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="height: 11.5%;">
+            <div class="icon p-2">
+                <img class="img-fluid" src="{% static 'logo.png' %}" alt="Icon" style="width: 30px; height: 30px;">
+            </div>
+            <h1 class="m-0" style="color: white;">House Rental</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="margin:0 1rem;background-color: #DC3445;">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home1/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add Property</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Welcome {{request.user.first_name}}
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #DC3445;">
+                        <a class="dropdown-item" href="{% url 'profile' %}" style="color: green; font-weight: bold;">View Profile</a>
+                        <a class="dropdown-item" href="{% url 'logoutpage' %}" style="color: green; font-weight: bold;">LogOut</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div>
+            {% if error%}
+            {% for i in Errors %}
+            <div class="alert alert-danger alert-dismissible show " role="alert">
+                <strong>{{i}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {%endfor%}
+            {% endif %}
+        </div>
+        <h1 class="form-title">Property Details</h1>
+
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="main-user-info">
+                <div class="u-type">
+                    <form method="POST" action="">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Select your Property Type<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                        {% if values.languages == "Flat/Appartment" %}
+                            <select name="languages" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option >Choose...</option>
+                                <option value="Flat/Appartment" selected>Flat/Appartment</option>
+                                <option value="Residential House">Residential House</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Bachelors Room">Bachelors Room</option>
+                            </select>
+                        {% elif values.languages == "Residential House" %}
+                            <select name="languages" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option >Choose...</option>
+                                <option value="Flat/Appartment">Flat/Appartment</option>
+                                <option value="Residential House" selected>Residential House</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Bachelors Room">Bachelors Room</option>
+                            </select>
+                        {% elif values.languages == "Villa" %}
+                            <select name="languages" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Flat/Appartment">Flat/Appartment</option>
+                                <option value="Residential House">Residential House</option>
+                                <option value="Villa" selected>Villa</option>
+                                <option value="Bachelors Room">Bachelors Room</option>
+                            </select>
+                        {% elif values.languages == "Bachelors Room" %}
+                            <select name="languages" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Flat/Appartment">Flat/Appartment</option>
+                                <option value="Residential House">Residential House</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Bachelors Room" selected>Bachelors Room</option>
+                            </select>
+                        {% else %}
+                            <select name="languages" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Flat/Appartment">Flat/Appartment</option>
+                                <option value="Residential House">Residential House</option>
+                                <option value="Villa">Villa</option>
+                                <option value="Bachelors Room">Bachelors Room</option>
+                            </select>
+                        {% endif %}
+                </div>
+                <!--<div class="u-type">
+                    <label for='type' style="margin-right: 1rem;"><b>For: </b></label>
+                    <label class="radio-inline" style="margin-right: 1rem;">
+                        <input type="radio" name="type" value="rentee" checked> &nbsp sale
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="owner"> &nbsp Rent/lease
+                    </label>
+                </div> -->
+                {% if values.type %}
+                <div class="u-type">
+                    <label for='type' style="margin-right: 1rem;"><b>Renting choice<span aria-hidden="true" class="required" style="color:red">*</span>:&nbsp &nbsp &nbsp </b></label>
+                    <label class="radio-inline" style="margin-right: 1rem;">
+                        <input type="radio" name="type" value="Full House" checked> &nbsp Full House
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="Sharing basis"> &nbsp Sharing Basis
+                    </label>
+                </div>
+                {% else %}
+                <div class="u-type">
+                    <label for='type' style="margin-right: 1rem;"><b>Renting choice:&nbsp &nbsp &nbsp </b></label>
+                    <label class="radio-inline" style="margin-right: 1rem;">
+                        <input type="radio" name="type" value="Full House"> &nbsp Full House
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="Sharing basis" checked> &nbsp Sharing Basis
+                    </label>
+                </div>
+                {% endif %}
+
+                {% if values.furnished %}
+                <div class="u-type">
+                    <label for='furnished' style="margin-right: 1rem;"><b>Furnishing Status: </b></label>
+                    <label class="radio-inline" style="margin-right: 1rem;">
+                        <input type="radio" name="furnished" value="Furnished" checked> &nbsp Furnished
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="furnished" value="UnFurnished"> &nbsp UnFurnished
+                    </label>
+                </div>
+                {% else %}
+                <div class="u-type">
+                    <label for='furnished' style="margin-right: 1rem;"><b>Furnishing Status: </b></label>
+                    <label class="radio-inline" style="margin-right: 1rem;">
+                        <input type="radio" name="furnished" value="Furnished"> &nbsp Furnished
+                    </label>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="furnished" value="UnFurnished" checked> &nbsp UnFurnished
+                    </label>
+                </div>
+                {% endif %}
+                <div class="user-input-box">
+                    <label for="city">City<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="text" id="city" name="city" value="{{values.city}}" placeholder="city" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="flat_name">Property Name<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="text" id="flat_name" name="flat_name" value="{{values.flat_name}}" placeholder="Property Name" required/>
+                </div>
+                
+                <div class="user-input-box">
+                    <label for="flatt">BHK<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="number" id="flatt" name="flatt" value="{{values.flatt}}" placeholder="Type of flat" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="area">Area (Sq.Ft)<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="number" id="area" name="area" value="{{values.area}}" placeholder="area" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="tflat">Totalflats</label>
+                    <input type="number" id="tflat" name="tflat" value="{{values.tflat}}" placeholder="number of flats" required/>
+                </div>
+                <div class="user-input-box">
+                    <label for="ramount">Rent Amount<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="number" step="500" id="ramount" name="ramount" value="{{values.ramount}}" placeholder="Enter Amount"/>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="ftotal">Bond (in months)<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="number" id="bond" name="bond" value="{{values.bond}}" placeholder="Bond" required/>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="ftotal">Total Floors<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <input type="number" id="ftotal" name="ftotal" value="{{values.ftotal}}" placeholder="Total no.of floors" required/>
+                </div>
+
+                <div class="user-input-box">
+                    <label class="my-1 mr-3 ml-3" for="inlineFormCustomSelectPref">Parking<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                        {% if values.park == "Yes" %}
+                            <select name="park" class="custom-select my-1 mr-3 sm-2 ml-3" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Yes" selected>Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        {% elif values.park == "No" %}
+                            <select name="park" class="custom-select my-1 mr-3 sm-2 ml-3" id="inlineFormCustomSelectPref">
+                                <option >Choose...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No" selected>No</option>
+                            </select>
+                        {% else %}
+                            <select name="park" class="custom-select my-1 mr-3 sm-2 ml-3" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        {% endif %}
+                </div>
+                
+
+                <div class="form-group cls1" style="font-size: 20px;">
+                    <label for="address">Address:<span aria-hidden="true" class="required" style="color:red">*</span></label>
+                    <textarea class="form-control" id="address" name="address" rows="4" cols="40" required>{{values.address}}</textarea>
+                  </div>
+
+
+                <div class="input-group date cls1 " id="datetimepicker1" data-target-input="nearest"
+                    style="width: 60%; color: black; font-size: 20px; font-weight: 400;">
+                    <label for="status">Available From: &nbsp</label>
+                    <input type="text" class="form-control datetimepicker-input" name="status"
+                        data-target="#datetimepicker1" value="{{values.status}}" /><br>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+
+
+
+                <label class="cls1"  style="color:black; size:17px"><b>Property Thumbnail<span aria-hidden="true" class="required" style="color:red">*</span></b>
+                    <input type="file" name="myImage" style="margin-top: 1rem;"
+                        accept="image/png, image/gif, image/jpeg" required/>
+                </label>
+
+                <label class="cls1" style="color:black; size:17px"><b>Property Images</b>
+                    <input type="file" name="imgs" style="margin-top: 1rem;"
+                        accept="image/png, image/gif, image/jpeg" multiple />
+                </label>
+            </div>
+
+            <div class="form-submit-btn text-center">
+                <button type="submit" class="btn btn-success"><b>Add Property</b></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(function () {
+            $("#datetimepicker1").datetimepicker({format:'DD/MM/YYYY'});
+        });
+    </script>
+    <script type = "text/javascript" >  
+        function preventBack() { window.history.forward(); }  
+        setTimeout("preventBack()", 0);  
+        window.onunload = function () { null };  
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="shop/style.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    {% load static %}
+<style>
+  .sidebar{
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #BD0039;
+    transition: all 0.5s ease;
+  }
+
+  .sidebar .logo-details{
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar .logo-details i{
+    font-size: 28px;
+    font-weight: 500; 
+    color: #fff;
+    min-width: 50px;
+    text-align: center
+  }
+  .sidebar .logo-details .logo_name{
+    color: #faf8d4;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .sidebar .nav-links{
+    margin-top: 10px;
+  }
+  .sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+  }
+  .sidebar .nav-links li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li a.active{
+    background: #EBDCCB;
+    border-radius: 10px;
+    opacity: 0.63;
+  }
+  .sidebar .nav-links li a:hover{
+    background: #C3BAAA;
+    border-radius: 10px;
+    opacity: 0.63;
+  }
+  .sidebar .nav-links li i{
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .sidebar .nav-links li a .links_name{
+    color:  #002500;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 17px;
+    letter-spacing: 0.75px;
+    font-weight: 600;
+    padding: 1rem;
+    white-space: nowrap;
+  }
+  .sidebar .nav-links .log_out{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .home-section{
+    position: relative;
+    background: #f5f5f5;
+    min-height: 170vh;
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: all 0.5s ease;
+  }
+  
+  .home-section .home-content{
+    position: relative;
+    padding-top: 54px;
+  }
+  .home-content .overview-boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 26px;
+  }
+  .overview-boxes .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 4 - 15px);
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  .overview-boxes .box-topic{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .home-content .box .number{
+    display: inline-block;
+    font-size: 35px;
+    margin-top: -6px;
+    font-weight: 500;
+  }
+  .logo_name{
+    margin-left:4px;
+  }
+  .logout{
+    margin-left:500px;
+    margin-top:200px;
+  }
+  .btn-primary, .btn-primary:active, .btn-primary:visited {
+    background-color: #0047AB !important;
+  }
+  .btn-primary:hover {
+      color: #fff;
+
+      /*set the color you want here*/
+  }
+  .btn-primary:hover{
+      background-color:#081D45 !important;
+  }
+  .searching{
+    margin-left:720px
+  }
+  .update{
+    margin-left:350px;
+    margin-right:300px;
+  }
+  .body
+{
+  background: white;
+  /* background-image: url("{% static '23.jpg' %}"); */
+  border-image-repeat: none;
+  background-size: cover;
+}
+ol,ul {
+  padding-left: 0px;
+}
+.message{
+  color:red;
+  margin-left:60px;
+}
+</style>
+<body class="body">
+  {% if user.is_authenticated %}
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">Welcome {{user.first_name}}</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/adminpanel/dashboard" >
+            {% comment %} <i class='bx bx-grid-alt' ></i> {% endcomment %}
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/userinfo">
+            {% comment %} <i class='bx bx-box' ></i> {% endcomment %}
+            <span class="links_name">Users Info</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/managereviews" class="active">
+            {% comment %} <i class='bx bx-list-ul' ></i> {% endcomment %}
+            <span class="links_name">Manage reviews</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/manageproperties">
+            {% comment %} <i class='bx bx-book-alt' ></i> {% endcomment %}
+            <span class="links_name">Manage properties </span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="/adminpanel/managerental">
+            {% comment %} <i class='bx bx-user' ></i> {% endcomment %}
+            <span class="links_name">Manage Rental properties</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="/adminpanel/logout">
+            {% comment %} <i class='bx bx-log-out'></i> {% endcomment %}
+            <span class="links_name">Log out</span>
+          </a>
+        </li>  
+      </ul>
+  </div>
+  </div>
+  </div>   
+</div>
+
+<div  class="update">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="/adminpanel/managereviews/update/update_data/{{data.id}}" method="post">
+        {% csrf_token %}
+            <div class="modal-header">						
+                <h4 class="modal-title">Update Data</h4>
+            </div>
+            <div class="modal-body">					
+                <div class="form-group">
+                    <label>RATINGS</label>
+                    <input type="text" name="rating_id" class="form-control" value={{data.id}} disabled required>
+                </div>
+                <div class="form-group">
+                    <label>User_Id</label>
+                    <input type="text" name="user_id" value={{data.user_id.user_id}} disabled class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Property_id</label>
+                  <input type="number" name="property_id" value={{data.id}} disabled class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Rating</label>
+                  <input type="number" name="rating" value={{data.rating}}  class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Review</label>
+                    <textarea class="form-control" name="review"  required>{{data.review}}</textarea>
+                </div>				
+                </div>
+                <div class="modal-footer">
+                <input type="submit" class="btn btn-success mt-3" value="Update">
+            </div>
+      </form>
+      <div class="mt-1 mb-5 pb-1">
+        {% for message in error%}
+        <p class='message'>{{message}}</p>
+        {%endfor%}
+      </div>    
+    </div>
+  </div>
+</div>
+      {%else%}
+        <h2 class="logout"> You are Logged Out <h1>
+      {%endif%}
+
+</body>
+</html>

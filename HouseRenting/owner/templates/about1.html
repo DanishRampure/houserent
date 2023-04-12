@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/98d084ea44.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/98d084ea44.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <title>House Rental App</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" static href="{% static 'style.css'%}"> -->
+
+    <!-- <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    >
+    
+  </script>
+  </head>
+  <style>
+    #intro {
+      background-repeat: no-repeat;
+      background-size: 1800px 900px;
+      background-color: white;
+      background-position: top;
+      background-attachment: fixed;
+    }
+
+    .wp-block-cb-carousel .slick-slide {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    nav {
+      background-color: #dc3445;
+    }
+
+    .abtimg {
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+    p,
+    li {
+      text-align: justify;
+    }
+  </style>
+
+  <body id="intro">
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger sticky-top mb-5">
+      <div class="container-fluid">
+        <div style="display: flex">
+          <img
+            class="img-fluid mt-2"
+            src="{% static 'logo.png' %}"
+            alt="Icon"
+            style="width: 35px; height: 35px"
+          />
+          <h2 class="text-light ms-2">HouseRenting</h2>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/owner/home1" style="color: white">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#foot" style="color: white">Contact Us</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/owner/add" style="color: white"
+              >Add New Property</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+              aria-expanded="false"
+              style="color: white"
+            >
+              Welcome {{request.user.first_name}}
+            </a>
+            <div class="dropdown-menu" style="background-color: #dc3445">
+              <a
+                class="dropdown-item"
+                href="{% url 'profile' %}"
+                style="
+                  color: white;
+                  font-weight: bold;
+                  background-color: #dc3445;
+                "
+                >View Profile</a
+              >
+              <a
+                class="dropdown-item"
+                href="{% url 'logoutpage' %}"
+                style="
+                  color: white;
+                  font-weight: bold;
+                  background-color: #dc3445;
+                "
+                >LogOut</a
+              >
+            </div>
+          </li>
+          {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000/login/signup"
+              >SignUp</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000/login/login"
+              >Login</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    {% block content %}
+    <section class="probootstrap-section">
+      <div class="container">
+        <div class="row heading">
+          <div class="col-md-12">
+            <h2 class="mt0 mb50 text-center">
+              Find your <span class="text-danger">Dream</span> home.
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <!-- <p><img src="{{about.image.url}}" class="img-responsive abtimg" alt=""></p> -->
+            <p>
+              <img
+                src="{% static 'aboutimg.png' %}"
+                class="img-responsive abtimg"
+                alt=""
+              />
+            </p>
+          </div>
+        </div>
+        <h3 class="heading text-center fw-small" style="margin-bottom: 5%">
+          <span class="text-danger"> #</span>RentingMadeEasy.
+        </h3>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Our <span class="text-danger">Misson</span></h2>
+            <!-- <p>{{about.misson}}</p> -->
+            <p>
+              The mission of a house rental website is to create a seamless and
+              trustworthy platform that benefits both landlords and tenants. The
+              website should offer a user-friendly interface to post their
+              rental properties with detailed descriptions, photos, and pricing
+              information. By facilitating the rental process and promoting
+              transparency and communication, the website can help to build
+              stronger relationships between renters and property owners and
+              contribute to a more stable and thriving rental market.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h2>Our <span class="text-danger">Vision</span></h2>
+            <!-- <p>{{about.vision}}</p> -->
+            <p>
+              The vision of a house rental website is to revolutionize the
+              rental market by offering a comprehensive, streamlined, and
+              innovative solution that transforms the way landlords and tenants
+              interact. By leveraging cutting-edge technology and data-driven
+              insights, the website aims to deliver a personalized and seamless
+              user experience that simplifies the rental process from start to
+              finish. The ultimate goal is to create a platform that empowers
+              renters and landlords to make informed decisions, build stronger
+              relationships, and promote a more equitable and sustainable rental
+              market.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="services" class="jumbotron" style="background-color:white;margin-left:6%;margin-right:6%">
+      <p class="h1 mt-0 mb-4" style="text-align:center">Our <span class="text-danger">Services</span></p>
+              <div class="container">
+             <p class="h6" style="color:black">
+  <ul>
+              Company provides a number of internet-based services through its platform and shall include:
+              
+              <li>Posting User profile or listing for the purpose of sale/rental of property, and related property services etc.</li>
+              <li>Find a property through houserentals.com and its internet links.</li>
+             <li> Place a print advertisement in any of the group publications through the www.houserentals.com site.</li>
+              <li>Post advertisements on Magicbricks.com.</li>
+              <li>Send advertisements and promotional messages through emails and messages</li>.
+              <li>The Services availability to purchase through various methods of payments will be offered soon. The purchase of Services shall be additionally governed by specific policies of sale, like subscription fees, payment and Refund policy, cancellation policy etc.</li></ul></p>
+      </div>
+      </div>
+      <div id="policy" class="jumbotron" style="background-color:white;margin-left:6%;margin-right:6%">
+          <p class="h1 mb-4" style="text-align:center"><span class="text-danger">Privacy Policy</span></p>
+          
+                  <div class="container">
+                 <p class="h6" style="color:black">
+  
+                  <li>houserentals.com respects the privacy of its users and is committed to its protection. Click here to read the Privacy Policy.</li>
+                  
+                  <li>Company through its various advertising campaigns collects information about the users. This information is voluntarily provided by the user and is collected in the database of houserentals.com. The information so collected in the database through these campaigns refers to the property details, email address and names of the user. houserentals.com uses third-party advertising companies to display/serve their ads on various other internet sites for reaching out to its prospective users/buyers/sellers. The data collected is for the exclusive use of houserentals.com and Company reserves its right to allow access to its clients for the purposes of purchase and disposing of properties only, and any unauthorized use or sharing of information by any third party shall invite appropriate legal action by Company against the erring party, including indemnification for third party claims for damages.</li></p>
+          </div>
+          </div>
+      <div id="terms" class="jumbotron" style="background-color:white;margin-left:6%;margin-right:6%">
+          <p class="h1 mb-4" style="text-align:center"><span class="text-danger">Terms and Conditions</span></p>
+                  <div class="container">
+                 <p class="h6" style="color:black"><ul>Unless otherwise specified, the capitalized words shall have the meanings as defined herein below:<br>
+                  <li>"Agreement" shall mean and include the completed application form, its attachment(s) and the terms and conditions stated herein.<br> It shall be deemed to have been executed at New Delhi.</li>
+                  <li>"Company": is defined as Riktam Technologies ("the Company") an existing Company under the Companies Act, 1956 and having its corporate office at #101, "Wings", Sri Nagar Colony Road, Sri Nagar Colony, Hyderabad, Telangana 500073 along with its unit for the Company's website houserentals.com.<br></li>
+                  <li>"Date of Commencement" is the date indicating the acceptance of the application by the User to the service. It shall be specified by the Company in its notice to You either through e-mail or conventional mail.<br></li>
+                  <li>"houserentals.com" is defined as the internet website of the Company at www.houserentals.com</li>
+                  <li>"My Subscriptions" contains time to time information and description of the Services for the User provided by the Company in writing or contained in the website HouseRenting.com.<br></li>
+                  <li>"Registration Data" is the database of all the particulars and information supplied by the User on initial application and subscription, including but without limiting to the User's name, telephone number, mailing address, account and email address.<br></li>
+                  <li>"User" is defined as an individual or corporate subscriber for the Services and the signatory, whose particulars are contained in the application form and includes his successors and permitted assignees. "User" or "You" also includes any person who access or avail this Site of the Company for the purpose of hosting, publishing, sharing, transacting, displaying or uploading information or views and includes other persons jointly participating in using the Site of the Company.<br>
+                  Words referring to masculine include the feminine and the singular include the plural and vice versa as the context admits or requires; and Words importing persons includes individuals, bodies corporate and unincorporated.</li></ul></p>
+          </div>
+          </div>
+  
+  
+    {% endblock %}
+    
+  </body>
+</html>

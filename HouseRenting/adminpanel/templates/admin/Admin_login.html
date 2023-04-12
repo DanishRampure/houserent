@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+        *{
+            font-family: 'poppins' ,sans-serif;
+        }
+        body{
+            background: white;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+        .container{
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px 0 15px;
+            
+        }
+        span{
+            color: #000f00;
+            font-size: 28px;
+            letter-spacing: .1rem;
+            display: flex;
+            justify-content: center;
+            padding: 5px 0 15px 0;
+            text-shadow: 1px 1px 2px #fff, 0 0 1em #fffff0, 0 0 0.2em #ffffff;
+            /* text-shadow: #fff 10px 0 20px; */
+        }
+        header{
+            height: 40px;
+            width: 450px;
+            color: rgba(5, 5, 5, 0.867);
+            font-size: 30px;
+            display: flex;
+            text-shadow: #fff 10px 0 20px;
+            /* text-shadow: 1px 1px 2px #fff, 0 0 1em #fffff0, 0 0 0.2em #ffffff; */
+            justify-content: center;
+            padding: 5px 0 5px 0;
+        }    
+
+        .input-field .input{   
+            height: 45px;
+            width: 87%;
+            border: none;
+            border-radius: 30px;
+            color: #000;
+            font-size: 15px;
+            padding: 0 0 0 45px;
+            background: rgba(136, 132, 132, 0.1);
+            outline: none;
+        }
+        i{
+            position: relative;
+            top: -33px;
+            left: 17px;
+            color: #000;
+        }
+        ::-webkit-input-placeholder{
+            color: #000;
+        }
+        .submit{
+            border:  0.5 solid black;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100%;
+            color: black;
+            background: rgb(226, 223, 223);
+            cursor: pointer;
+            transition: .3s ;
+        }
+        .submit:hover{
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+        label a{
+            text-decoration: none;
+            color: #000;
+        }
+        .message{
+            color:red;
+            margin-left:20px;
+        }
+    </style>
+    <title>Admin Login</title>
+
+</head>
+<body>
+   <div class="box">
+    <div class="container">
+        <div class="top">
+            <span>Admins   Login   Panel</span>
+            <!-- <header>Please login to your account </header> -->
+        </div>
+        <form action="/adminpanel/connect" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                <input type="text" class="input" name="username" placeholder="Username" required>
+                <i class='bx bx-user' ></i>
+            </div>
+            <div class="input-field">
+                <input type="Password" class="input" name="password" placeholder="Password" required>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <div class="input-field">
+                <input type="submit" class="submit" value="Login">
+            </div>
+        </form>
+        <div class="mt-1 mb-5 pb-1">
+          {% for i in error%}
+          <p class='message'>{{i}}</p>
+          {%endfor%}
+        </div>    
+    </div>
+</div>  
+</body>
+</html>

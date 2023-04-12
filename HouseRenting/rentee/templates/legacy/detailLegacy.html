@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous">
+      </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .btn {
+            width: 50% !important;
+            border-radius: 0% !important;
+            color: white !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+
+        }
+
+        .flex {
+            display: flex !important;
+        }
+
+        .navbar {
+            height: 50px;
+            background-color: #D82329;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navContainer {
+            width: 100vw;
+            max-width: 1024px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+            padding-left: 10px;
+            font-size: large;
+        }
+
+        .navButton {
+          margin-right: 10px;
+            border: solid 3px #febb02;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            color: black;
+            font-family:"Roboto", sans-serif;
+            font-weight: 500;
+        }
+
+        .pListTitles>h2 {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .footer_container {
+            background-color: #D82329;
+            width: 100vw;
+        }
+
+        .footerTitle {
+            padding-top: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .footer {
+            width: 100%;
+            width: 100vw;
+            font-size: 12px;
+        }
+
+        .fLists {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .fList {
+            list-style: none;
+            padding: 30px;
+        }
+
+        .fListItem {
+            margin-bottom: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .fText {
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin-top: 0px;
+            padding-bottom: 20px;
+            font-size: x-small;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .bg {
+            background-color: rgb(209, 208, 208);
+            padding: 200px;
+        }
+
+
+        .user-content p {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+
+        .ratings i {
+            color: rgb(246, 179, 10);
+        }
+
+        .form_css {
+
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+
+        div.stars {
+
+            width: 250px;
+
+            display: inline-block;
+
+        }
+
+
+        input.star {
+            display: none;
+        }
+
+
+
+        label.star {
+
+            float: right;
+
+            padding: 3px;
+
+            font-size: 25px;
+
+            color: #FD4;
+
+            transition: all .2s;
+
+        }
+
+
+
+        input.star:checked~label.star:before {
+
+            content: '\f005';
+
+            color: #FD4;
+
+            transition: all .25s;
+
+        }
+
+
+        input.star-5:checked~label.star:before {
+
+            color: #FE7;
+
+            text-shadow: 0 0 20px #952;
+
+        }
+
+
+
+        input.star-1:checked~label.star:before {
+            color: #F62;
+        }
+
+
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+
+
+        label.star:before {
+
+            content: '\f006';
+
+            font-family: FontAwesome;
+
+        }
+
+        .my-div1 {
+            display: none;
+        }
+
+        a:link {
+            text-decoration: none !important;
+        }
+
+        .mm {
+            margin-top: -155px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navContainer">
+            <span class="logo">HouseRenting</span>
+            <div class="navItems">
+                <button class="navButton">Register</button>
+                <button class="navButton">Login</button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5  ">
+        <div class="row ">
+            <div class="col-lg-5 border p-4 justify-content-center text-center">
+                <img src={{property.img.url}} class="img-fluid " alt="">
+
+
+                <div class="d-grid gap-2 flex mt-2">
+                    <button class="btn btn-primary " type="button">Contact owner</button>
+                    <button class="btn btn-success " type="button">Pay now</button>
+
+                </div>
+
+            </div>
+            <div class="col-lg-7 ">
+                <h4 class="mt-2">Grand hotel,Hyderabad</h4>
+                <p class="text-secondary"> <small> Houuse for rent center of town near prakasam bhavan, church centre ,
+                        ongole railways station , nellore bustand</p></small>
+                <h6 class="mb-2 ">Building details :</h6>
+                <div class="flex">
+                    <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                    <p class="ms-2 "><span class="fw-bold">Type</span> : {{ property.property_type }}</p>
+                </div>
+                <div class="flex">
+                    <i class="fa-solid fa-circle-check text-warning mt-2"></i>
+                    {% if property.parking %}
+                    <p class="ms-2 "><span class="fw-bold">Parking</span> Availabe</p>
+                    {% else %}
+                    <p class="ms-2 "><span class="fw-bold">Parking</span>Not Availabe</p>
+                    {% endif %}
+                    
+                </div>
+                <div class="flex">
+                    <i class="fa-solid fa-circle-check text-warning mt-2"></i>
+                    <p class="ms-2 "><span class="fw-bold">Floor</span> {{property.floor}} floor</p>
+                </div>
+                <div class="flex">
+                    <i class="fa-solid fa-circle-check text-warning mt-2"></i>
+                    <p class="ms-2 "><span class="fw-bold">Bond</span> {{property.bond}}years</p>
+                </div>
+                <div class="flex">
+                    <i class="fa-solid fa-circle-check text-warning mt-2"></i>
+                    <p class="ms-2 "><span class="fw-bold">Address</span> {{property.address}}</p>
+                </div>
+                <h6 class="mb-2 text-success text-left  ">Renting price :</h6>
+                <h1> ₹{{property.rent_amount}} </h1>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <!--reviews start-->
+    <div class="  container mb-5 mt-3 bg-light">
+        <div class="container col-lg-8  p-4 ">
+            <div class="row text-center ">
+                <h2 class="fw-bold ">Please give your valuble feedback</h2>
+                <p class="text-secondary"> Analyzing reviews left by your customers, helps your company understand
+                    overall customer satisfaction.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            {%for review in reviews %}
+            <div class="col-lg-6">
+                <div class="col-md-12 mb-2">
+                    <div class="card p-2  px-4 mb-2 ">
+                        <div class="user-content">
+
+                            <h5 class="mb-3 mt-1 ratings"><i
+                                class="fa fa-star text-warning me-2">{{ review.rating }}</i> {{ review.user_name }}</h5>
+                                    <p style = " font-size : medium ">{{ review.review }}
+                                    </p>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <a href="#container" id="my-link">Load more reviews -></a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 form_css">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label fw-bold">Name :</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Review :</label>
+                    <textarea class="form-control" id="review" rows="3"
+                        placeholder="write your review here.."></textarea>
+                </div>
+                <div style="display:None; color:red;" id = "hidden"></div>
+                <div class="row ms-3">
+                    <div class="col-lg-6 col-md-6  col-sm-6 col-6 star ">
+                     
+
+                            <input class="star star-5 starimp" id="star-5" type="radio" name="star" value="5" />
+
+                            <label class="star star-5 " for="star-5"></label>   
+
+                            <input class="star star-4 starimp" id="star-4" type="radio" name="star" value="4"/>
+
+                            <label class="star star-4" for="star-4"></label>
+
+                            <input class="star star-3 starimp" id="star-3" type="radio"  name="star" value="3" />
+
+                            <label class="star star-3  " for="star-3"></label>
+
+                            <input class="star star-2  starimp" id="star-2" type="radio" name="star" value="2" />
+
+                            <label class="star star-2  " for="star-2"></label>
+
+                            <input class="star star-1  starimp" id="star-1" type="radio" name="star" value= "1" />
+
+                            <label class="star star-1" for="star-1"></label>
+
+                     
+                    </div>
+
+                    <div class="col-lg-6 col-md-6  col-sm-6 col-6">
+                        <div class="d-grid   ">
+                            <button class="btn btn-success  " type="button" id="submit"  val="{{property.id}}">Submit</button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+{%  if remaining_count  >= 2 %}
+    <div class="container my-div1 mt-5 mm" id="container">
+        {%for review in remaining_reviews %}
+        <div class="row" id="box">
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="card p-2  px-4 mb-2 ">
+
+                    <div class="user-content">
+
+                        <h5 class="mb-3 mt-1 ratings"><i
+                            class="fa fa-star text-warning me-2">{{ review.rating }}</i> {{ review.user_name}}</h5>
+
+                        <p style = " font-size : medium ">{{ review.review }}
+                        </p>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+   <div class="container my-div1 mt-5" id="container">
+        {%for review in remaining_reviews %}
+        <div class="row" id="box">
+
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="card p-2  px-4 mb-2 ">
+
+                    <div class="user-content">
+
+                        <h5 class="mb-3 mt-1 ratings"><i
+                            class="fa fa-star text-warning me-2">{{ review.rating }}</i> {{ review.user_name}}</h5>
+
+                                <p style = "font-size : medium">{{ review.review }}
+                                </p>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+    <!--reviews ends-->
+
+
+
+    <!--footer starts-->
+    <div class="footer_container mt-3">
+        <h1 class="footerTitle">HouseRenting</h1>
+        <div class="footer">
+            <div class="fLists">
+                <ul class="fList">
+                    <li class="fListItem">Countries</li>
+                    <li class="fListItem">Cites</li>
+                    <li class="fListItem">Regions</li>
+                    <li class="fListItem">Streets</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Houses</li>
+                    <li class="fListItem">Apartments</li>
+                    <li class="fListItem">Hostels</li>
+                    <li class="fListItem">Penthouses</li>
+                    <li class="fListItem">Studio Apartments</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Unique places to stay</li>
+                    <li class="fListItem">Best Locations</li>
+                    <li class="fListItem">Cheapest locations</li>
+                    <li class="fListItem">Luxury properties</li>
+                    <li class="fListItem">Best deals</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Car rental</li>
+                    <li class="fListItem">Flight Finder</li>
+                    <li class="fListItem">Restaurant reservations</li>
+                    <li class="fListItem">Agents</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Customer Service</li>
+                    <li class="fListItem">Help</li>
+                    <li class="fListItem">Press center</li>
+                    <li class="fListItem">Safety standards</li>
+                    <li class="fListItem">Terms & conditions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="fText">Copyright © 2023.</div>
+    </div>
+    <!-- footer ends -->
+
+    <script>
+        const link = document.querySelector('#my-link');
+        const myDiv1 = document.querySelector('.my-div1');
+
+        link.addEventListener('click', function () {
+            myDiv1.style.display = 'block';
+            link.style.display = 'none';
+        });
+
+    </script>
+    <script>
+
+
+        var value=0;
+        
+       $(".starimp").click(function(){
+
+           
+            var str  = ($(this).attr('value'));
+            value = parseInt(str);
+   
+       });
+       
+       $("#submit").click(function(){
+
+     
+
+        var id =  $("#submit").attr("val");
+        
+        var error = "";
+         if(value==0)
+         {
+           error =  "Please give some rating...";
+         }
+         var review = $("#review").val();
+         if(review.length==0)
+         error = error+"please give some review";
+         if(review.length>500)
+         error = error + "Review must be less than 500 characters and you need to remove " + (review.length-500)+"characters";
+        
+         $("#hidden").text(error);
+         $("#hidden").show();
+      
+         if(error.length==0)
+         { 
+
+           var  data = {
+               "review" : review,
+               "rating" : value,
+               "id"     : id
+            };
+             
+            $.ajax({
+              type :  "POST",
+              url : "/review",
+              data : JSON.stringify(data),
+              success: function(response){
+                 alert(response.status);
+                 $("#hidden").css('color','green')
+                 $("#hidden").text(response.status)
+                 $("#hidden").show()
+              },
+              contentType:"application/json"
+            });
+         }
+       
+      });
+   
+   </script>
+</body>
+
+</html>
+

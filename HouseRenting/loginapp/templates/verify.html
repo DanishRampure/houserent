@@ -1,0 +1,140 @@
+{% extends 'signup_page.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Signuppage</title>
+  </head>
+
+  <body style="background-color: white">
+    {%block content %}
+    <style>
+      .form-control {
+        border: none;
+      }
+
+      .reg-form.hover {
+        opacity: 1;
+      }
+      .reg-form {
+        background: none;
+        box-shadow: 2px 5px 10px black;
+        margin-top: 5rem;
+        height: max-content;
+        width: max-content;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+      form {
+        margin-top: 5px;
+        background-color: aliceblue;
+        border-radius: 2%;
+        padding: 1rem;
+        border: 1px solid lightblue;
+      }
+      h3 {
+        border-bottom: 1px solid lightgrey;
+      }
+      @media (max-width: 900px) {
+        .container {
+          width: 50%;
+        }
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          height: max-content;
+          margin: 1rem;
+        }
+      }
+    </style>
+    <div class="container reg-form" style="opacity: 0.9">
+      {% if hars %}
+      <div class="alert alert-danger alert-dismissible show" role="alert">
+        <strong>Incorrect OTP, Please recheck!</strong>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endif %}
+      <form action="" method="post">
+        {% csrf_token %}
+        <h3 style="text-align: center">ACCOUNT CONFIRMATION</h3>
+
+        <div class="form-group">
+          <div id="toggle">
+            <p style="font-size: 15px; font-family: Georgia; margin-top: 10px">
+              An OTP has been sent to the registered mail-ID,Please confirm it.
+            </p>
+            <div
+              class="input-container d-flex flex-row justify-content-center mt-2"
+            >
+              <input
+                type="text"
+                class="m-1 form-control rounded"
+                style="border: 1px solid lightgrey"
+                placeholder="Please Enter the code"
+                maxlength="6"
+                name="ver"
+              />
+            </div>
+            <div>
+              <small style="margin-left: 3rem">
+                Didn't get the OTP
+                <input
+                  type="text"
+                  class="text-decoration-none"
+                  style="
+                    border: none;
+                    border: 1px solid lightgrey;
+                    border-radius: 3px;
+                  "
+                  name="press"
+                  maxlength="6"
+                  placeholder="Type resend"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-success btn-sm active"
+                  style="
+                    background-color: rgb(163, 234, 19);
+                    color: black;
+                    font-family: Georgia;
+                    font-size: 10px;
+                    box-sizing: border-box;
+                  "
+                >
+                  <b>Resend</b></button
+                ><br />
+              </small>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                style="margin-top: 5px"
+                class="btn btn-success"
+              >
+                <b>Verify</b></button
+              ><br />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    {%endblock%}
+  </body>
+</html>

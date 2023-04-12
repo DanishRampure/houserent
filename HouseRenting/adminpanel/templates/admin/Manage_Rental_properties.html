@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <!-- <link rel="stylesheet" href="../../style/style.css"> -->
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    {% load static %}  
+<style>
+  
+  .sidebar{
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #BD0039;
+    transition: all 0.5s ease;
+  }
+  h2{
+    padding-bottom: 15px;
+    padding-top: 18px;
+  }
+  .sidebar .logo-details{
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar .logo-details i{
+    font-size: 28px;
+    font-weight: 500; 
+    color: #fff;
+    min-width: 50px;
+    text-align: center
+  }
+  .sidebar .logo-details .logo_name{
+    color: #faf8d4;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .sidebar .nav-links{
+    margin-top: 10px;
+  }
+  .sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+  }
+  .sidebar .nav-links li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  .sidebar .nav-links li a.active{
+    background: #EBDCCB;
+    border-radius: 10px;
+  }
+  .sidebar .nav-links li a:hover{
+    background: #C3BAAA;
+    border-radius: 10px;
+    opacity: 0.63;
+  }
+  .sidebar .nav-links li i{
+    min-width: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+  }
+  .sidebar .nav-links li a .links_name{
+    color:  #002500;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 17px;
+    letter-spacing: 0.75px;
+    padding: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .sidebar .nav-links .log_out{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .home-section{
+    position: relative;
+    /* background-image: url("{% static '23.jpg' %}"); */
+    /* background: #f5f5f5; */
+    min-height: 170vh;
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: all 0.5s ease;
+    background-size: cover;
+  }
+  
+  .home-section .home-content{
+    position: relative;
+    padding-top: 54px;
+  }
+  .home-content .overview-boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    margin-bottom: 26px;
+  }
+  .overview-boxes .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 4 - 15px);
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  .overview-boxes .box-topic{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .home-content .box .number{
+    display: inline-block;
+    font-size: 35px;
+    margin-top: -6px;
+    font-weight: 500;
+  }
+.body
+{
+  background: white;
+  /* background-image: url("{% static '23.jpg' %}"); */
+  background-size: cover;
+}
+ol,ul {
+  padding-left: 0px;
+}
+.table tr:nth-child(odd){
+    background: #ADB5BD;
+  }
+
+  .table tr:nth-child(even){
+    background: white;
+  }
+
+  </style>
+<body class="body">
+  {% if user.is_authenticated %}
+  <div class="sidebar">
+    <div class="logo-details">
+      <span class="logo_name">Welcome {{user.first_name}}</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="/adminpanel/dashboard" >
+            {% comment %} <i class='bx bx-grid-alt' ></i> {% endcomment %}
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/userinfo">
+            {% comment %} <i class='bx bx-box' ></i> {% endcomment %}
+            <span class="links_name">Users Info</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/managereviews">
+            {% comment %} <i class='bx bx-list-ul' ></i> {% endcomment %}
+            <span class="links_name">Manage reviews</span>
+          </a>
+        </li>
+        <li>
+          <a href="/adminpanel/manageproperties">
+            {% comment %} <i class='bx bx-book-alt' ></i> {% endcomment %}
+            <span class="links_name">Manage properties </span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="/adminpanel/managerental" class="active">
+            {% comment %} <i class='bx bx-user' ></i> {% endcomment %}
+            <span class="links_name">Manage Rental properties</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="/adminpanel/logout">
+            {% comment %} <i class='bx bx-log-out'></i> {% endcomment %}
+            <span class="links_name">Log out</span>
+          </a>
+        </li>  
+      </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="table-wrapper">
+      <div class="table-title" style="width: 75%;margin-left: 15%; " >
+          <div class="row">
+              <div class="col-sm-6">
+                <h2>Manage<b> Rental Properties</b></h2>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+        <div class="container">
+          <div class="text-right" style="width: 40%;margin-left: 13.5%; padding-top: 1%;">
+            <a href="/adminpanel/managerental"><button class="btn btn-dark btn-sm">Clear Search</button></a>
+          </div>
+      <table class="table table-striped table-hover" style="width:96%;margin-left:12%; margin-top:3%;">
+        <thead>
+            <tr>
+                <th style="font-size: 15px;" width="40%">Id</th>
+                <th style="font-size: 15px;" width="40%">City</th>
+                <th style="font-size: 15px;" width="20%">Flat name</th>
+                <th style="font-size: 15px;width: 2px;">Furnished</th>
+                <th style="font-size: 15px;">Addreavg ratings</th>
+                <th style="font-size: 15px;">Address
+                </th>
+                <th style="font-size: 15px;">Rent Amount
+                </th>
+                <th style="font-size: 15px;">Area
+                </th>
+                <th style="font-size: 15px;">Property Type</th>
+                <th style="font-size: 15px;">Choices</th>
+                <th style="font-size: 15px;">Total_flats</th>
+                <th style="font-size: 15px;">Totfloors</th>
+                <th style="font-size: 15px;">Flat_type</th>
+                <th style="font-size: 15px;">Parking</th>
+                </th>
+                <th style="font-size: 15px;">Owner Id
+                </th>
+                <th style="font-size: 15px;">is_wishlist</th>
+                <th style="font-size: 15px;">Availability_Date</th>
+                <th style="font-size: 15px;">Bond</th>
+                <th style="font-size: 15px;">Update</th>
+                {% comment %} <th style="font-size: 15px;">Delete</th> {% endcomment %}
+                <tr>
+                  <form action="/adminpanel/managerental/search_id" method="GET">
+                    {%csrf_token%}
+                     <td><input type="search" class="searchInput" class="form-control" name="id" placeholder="Search Id" aria-label="Search" /></td>
+                  </form>
+                  <form action="/adminpanel/managerental/search_city" method="GET">
+                    {%csrf_token%}
+                      <td><input type="search" class="searchInput" class="form-control" name="city" placeholder="Search City" aria-label="Search" /></td>
+                  </form>
+                  <form action="/adminpanel/managerental/search_flat_name" method="GET">
+                    {%csrf_token%}
+                      <td><input type="search" class="searchInput" name="flat_name" class="form-control" placeholder="Search flat_name" aria-label="Search" /></td>
+                  </form>
+                  <td  colspan="3"></td>
+                  <form action="/adminpanel/managerental/search_ramount" method="GET">
+                    {%csrf_token%}
+                      <td><input type="search" class="searchInput" name="ramount" class="form-control" placeholder="Search ramount" aria-label="Search" /></td>
+                  </form>
+                  <form action="/adminpanel/managerental/search_area" method="GET">
+                    {%csrf_token%}     
+                      <td><input type="search" class="searchInput" name="area" class="form-control" placeholder="Search area" aria-label="Search" /></td>
+                  </form>
+                  <td colspan="5"></td>
+                  <td></td> 
+                  <form action="/adminpanel/managerental/search_owner_id" method="GET">
+                    {%csrf_token%}
+                      <td><input type="search" class="searchInput" class="form-control" name="owner_id" placeholder="Search Id" aria-label="Search" /></td>
+                  </form>
+               
+                  <td></td>
+                  <td></td>
+                  <form action="/adminpanel/managerental/search_bond" method="GET">
+                    {%csrf_token%}
+                      <td><input type="search" class="searchInput" class="form-control" name="bond" placeholder="Search bond" aria-label="Search" /></td>
+                  </form>
+                </tr>
+            </tr>
+        </thead>
+        <tbody>
+         {% if data%}
+            {% for i in data %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.city}}</td>
+                    <td>{{i.flat_name}}</td>
+                    <td>{{i.furnished}}</td>
+                    <td>{{i.avg_rating}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.ramount}}</td>
+                    <td>{{i.area}}</td>
+                    <td>{{i.property_type}}</td>
+                    <td>{{i.choices}}</td>
+                    <td>{{i.total_flats}}</td>
+                    <td>{{i.totfloors}}</td>
+                    <td>{{i.flat_type}}</td>
+                    <td>{{i.parking}}</td>
+                    <td>{{i.owner_id}}</td>
+                    <td>{{i.is_wishlist}}</td>
+                    <td>{{i.availability_date}}</td>
+                    <td>{{i.bond}}</td>
+                    <td>
+                      <a href="/adminpanel/managerental/update/{{i.id}}" class="edit" ><button class="btn btn-primary btn-sm">Edit</button></a>
+                    </td>
+                    {% comment %} <td>
+                        <a href="/adminpanel/managerental/delete/{{i.id}}" class="delete" ><button class="btn btn-danger btn-sm">Delete</button></a>
+                    </td> {% endcomment %}
+                </tr>
+            {%endfor%}
+          {% else%}
+                <td colspan="18" style="text-align:center;">Result not Found</td>
+                    {% comment %} <td>NoAction</td> {% endcomment %}
+          {%endif%}  
+        </tbody>
+    </table>
+
+  </div>
+</div>
+{%else%}
+  <h1 class="logout"> You are Logged Out </h1>
+{%endif%}
+
+</body>
+</html>

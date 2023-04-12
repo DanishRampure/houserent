@@ -1,0 +1,1352 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+        </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <script src="{% static 'main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="your_script.js"></script>
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .btn {
+
+
+            color: white !important;
+        }
+
+        .flex {
+            display: flex !important;
+        }
+
+
+        nav {
+            background-color: #DC3445;
+        }
+
+        .navContainer {
+            width: 100vw;
+            max-width: 1024px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+            padding-left: 10px;
+            font-size: large;
+        }
+
+        .navButton {
+            margin-right: 10px;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            color: black;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .pListTitles>h2 {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .footer_container {
+            background-color: #D82329;
+            width: 100vw;
+        }
+
+        .footerTitle {
+            padding-top: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            color: white;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .footer {
+            width: 100%;
+            width: 100vw;
+            font-size: 12px;
+        }
+
+        .fLists {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .fList {
+            list-style: none;
+            padding: 30px;
+        }
+
+        .fListItem {
+            margin-bottom: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .fText {
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin-top: 0px;
+            padding-bottom: 20px;
+            font-size: x-small;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .bg {
+            background-color: rgb(209, 208, 208);
+            padding: 200px;
+        }
+
+
+        .user-content p {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+
+        .ratings i {
+            color: rgb(246, 179, 10);
+        }
+
+        .form_css {
+
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+
+        div.stars {
+
+            width: 100px;
+
+            display: inline-block;
+
+        }
+
+
+        input.star {
+            display: none;
+        }
+
+
+
+        label.star {
+
+            float: right;
+
+            padding: 3px;
+
+            font-size: 25px;
+
+            color: #FD4;
+
+            transition: all .2s;
+            cursor: pointer !important;
+
+        }
+
+
+
+        input.star:checked~label.star:before {
+
+            content: '\f005';
+
+            color: #FD4;
+
+            transition: all .25s;
+
+        }
+
+
+        input.star-5:checked~label.star:before {
+
+            color: #FE7;
+
+            text-shadow: 0 0 20px #952;
+
+        }
+
+
+
+        input.star-1:checked~label.star:before {
+            color: #F62;
+        }
+
+
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+
+
+        label.star:before {
+
+            content: '\f006';
+
+            font-family: FontAwesome;
+
+        }
+
+        .my-div1 {
+            display: none;
+        }
+
+        a:link {
+            text-decoration: none !important;
+        }
+
+        .mm {
+            margin-top: -155px !important;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .bar-5 {
+            width: 60%;
+            height: 6px;
+            background-color: #04AA6D;
+        }
+
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 6px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 6px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 6px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 6px;
+            background-color: #f44336;
+        }
+
+        .j {
+            height: 200px;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        img {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .jnew {
+            height: 300px;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .g {
+            height: 150px;
+            width: 250px;
+            overflow: hidden;
+        }
+
+        .jnew1 {
+            height: 300px;
+            width: 700px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger sticky-top mb-5 p-1">
+        <div class="container-fluid">
+            <div style="display: flex;"><img class="img-fluid " src="{% static 'logo.png' %}" alt="Icon"
+                    style="width: 40px; height: 40px; border-radius:50%">
+                <h2 class="text-light ms-2 fw-bold">House Rental</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/home/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="http://127.0.0.1:8000/rentee/show/">Wishlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'logoutpage' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="heart mt-5">
+        <div class="container mt-5 mb-3">
+            <h3 class="heading text-center fw-bold"> <span class="text-danger"> #</span>RentingMadeEasy.</h3>
+
+            <div class="row d-flex align-items-center">
+                {% if images_less %}
+                <div class="col-lg-6 ">
+                    <div class="row g-1">
+                        {% if images.count == 0%}
+                        <div class="col-md-12  col-sm-12 col-12 ">
+
+                            <img src={{mydata.myImage.url}} class="img-fluid rounded-3 jnew1" alt="image2"
+                                id={{mydata.id}} style="height:300px;width:700px ">
+
+
+                        </div>
+                        {% else %}
+                        <div class="col-md-6  col-sm-6 col-6 ">
+
+                            <img src={{mydata.myImage.url}} class="img-fluid check jnew rounded-3" alt="image2"
+                                id={{mydata.id}}>
+
+                        </div>
+                        {% endif %}
+                        {% if images.count == 1 %}
+                        <div class="col-md-6 col-sm-6 col-6 ">
+                            {% for ima in images %}
+                            {% if forloop.counter == 1 %}
+                            <img src={{ima.file.url}} class="img-fluid  check jnew rounded-3" alt="image5"
+                                id={{mydata.id}} style="opacity: 0.5;   filter: blur(0.5px); 
+">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                id={{mydata.id}} class="check">
+
+                                View all
+                            </div>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="col-lg-6">
+                            {% for ima in images %}
+                            {% if forloop.counter == 1 %}
+                            <img src={{ima.file.url}} class="img-fluid p-0 check jnew rounded-3" alt="image5"
+                                id={{mydata.id}} style="opacity: 0.5;   filter: blur(0.5px); 
+                                                             ">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                class="check" id={{mydata.id}}>
+
+                                + {{images_actual_count2 }} Photos
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% endif%}
+                    </div>
+                </div>
+
+
+                {% else %}
+
+
+                <div class="col-md-6  ">
+                    <div class="row g-1">
+                        <div class="col-md-6  col-sm-6 col-6 ">
+
+
+                            <img src={{mydata.myImage.url}} class="img-fluid check rounded-3 j" alt="image1"
+                                id="{{ mydata.id }}">
+
+
+
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-6 ">
+                            {% for ima in images %}
+                            {% if forloop.counter == 2 %}
+                            <img src={{ima.file.url}} class="img-fluid check rounded-3 j" alt="image2" id={{mydata.id}}>
+
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row pt-1 g-1">
+                        <div class="col-md-4  col-sm-4 col-4">
+                            {% for ima in images %}
+                            {% if forloop.counter == 3 %}
+                            <img src={{ima.file.url}} class="img-fluid check p-0 g rounded-3" alt="image3"
+                                id={{mydata.id}}>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-4">
+                            {% for ima in images %}
+                            {% if forloop.counter == 4 %}
+                            <img src={{ima.file.url}} class="img-fluid check p-0 g rounded-3" alt="image4"
+                                id={{mydata.id}}>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                        {% if images.count == 5 %}
+                        <div class="col-md-4 col-sm-4 col-4" style="position: relative;">
+
+
+                            {% for ima in images %}
+                            {% if forloop.counter == 5 %}
+
+                            <img src={{ima.file.url}} class="img-fluid check p-0 g rounded-3" id={{mydata.id}}
+                                alt="image5" style="opacity: 0.5;   filter: blur(0.5px); 
+">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                class="check" id={{mydata.id}}>
+
+                                View all
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                        {% else %}
+                        <div class="col-md-4 col-sm-4 col-4" style="position: relative;">
+
+
+                            {% for ima in images %}
+                            {% if forloop.counter == 5 %}
+                            <img src={{ima.file.url}} class="img-fluid p-0 check g rounded-3" alt="image5"
+                                id={{mydata.id}} style="opacity: 0.5;     filter: blur(0.5px); 
+">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                class="check" id={{mydata.id}}>
+
+                                + {{images_actual_count }} Photos
+                            </div>
+
+
+                            {% endif %}
+                            {% endfor %}
+
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                {% endif %}
+
+
+
+                <div class="col-lg-6  mt-3">
+                    <h3 class="fw-bold">{{mydata.flat_name}},<span class="text-danger"> {{mydata.city}}</span></h3>
+                    <p><span class="fw-bold">Address: </span> {{mydata.address}}</p>
+
+                    <!-- <p>{{mydata.flat_name}} is {{mydata.property_type}} and beautiful, which is located in the {{mydata.city}} city at {{mydata.address}}. Our community entirely consists of {{mydata.total_flats}} flats and a single block consists of {{mydata.totfloors}}. This {{mydata.flat_type}} BHK {{mydata.property_type}} with several additional facilities are available from {{mydata.date}} for rent only at {{mydata.ramount}} per month. Wish to see you soon in our sweet home.</p> -->
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p class=" mt-1"><span class="fw-bold">Area</span> : {{ mydata.area }} sqft
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p><span class="fw-bold ">Total flats</span> :
+                                    {{mydata.total_flats}}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p><span class="fw-bold">Choices</span> : {{ mydata.choices }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p class=" mt-1"><span class="fw-bold ">Total floors</span> :
+                                    {{mydata.totfloors}}
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 ">
+                            <div class="flex">
+
+                                <p><span class="fw-bold">Bond</span> :
+                                    {{mydata.bond }} months</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p><span class="fw-bold ">Flat type</span> : {{ mydata.flat_type }} bhk</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                {% if property.parking %}
+                                <p><span class="fw-bold">Parking:</span> Available</p>
+                                {% else %}
+                                <p><span class="fw-bold">Parking:</span> Not Available</p>
+                                {% endif %}
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p><span class="fw-bold">Available from</span> :
+                                    {{mydata.availability_date }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                            <div class="flex">
+
+                                <p><span class="fw-bold">Furnished:</span>
+                                    {{mydata.furnished}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <h6 class="mb-2 text-success text-left  ">Renting price :</h6>
+                    <h1> ₹{{mydata.ramount}} </h1>
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"> <span class="text-danger">Owner</span> details
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="flex">
+
+                            <p><span>Name</span> :
+                                {{owner.first_name}} {{owner.last_name}}</p>
+                        </div>
+                        <div class="flex">
+
+                            <p><span>Email</span> :
+                                <span class="text-primary"> {{owner.email}}</span>
+
+                            </p>
+                        </div>
+                        <div class=" flex">
+
+                            <p><span>Phone number</span> :
+                                <span class="text-success">{{owner.phonenumber}}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Contact owner
+                    </button>
+                    <a class="ms-2 " style="text-decoration: none; color:#DC3445"
+                        href="http://127.0.0.1:8000/rentee/home/">explore
+                        other properties </a><i style="color:#DC3445"
+                        class="fa-sharp fa-solid fa-arrow-right ms-1 mt-2"></i>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <!--reviews start-->
+        <div class="  container mb-5 mt-3 bg-light">
+            <div class="container col-lg-8  p-4 ">
+                <div class="row text-center ">
+                    <h2 class="fw-bold heading">Please give your <span class="text-danger">valuble</span> feedback</h2>
+                    <p class="text-secondary"> Analyzing reviews left by our customers, helps our company
+                        understand
+                        overall customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row">
+                {% if reviews%}
+
+                <div class="col-lg-6">
+
+
+                    {%for review in reviews %}
+                    <div class="col-md-12 mb-2">
+                        <div class="card p-2  px-4 mb-2 ">
+                            <div class="user-content">
+
+                                <h5 class="mb-3 mt-1 ratings ">
+
+
+
+
+                                    <!-- 
+
+                                    {{ review.user_id.last_name}} {{ review.time_created|timesince }} ago -->
+
+                                    <div class="row">
+                                        <div class="col-lg-8"><i class="fa fa-star text-warning me-2">{{review.rating}}
+                                            </i>
+                                            {{review.user_id.first_name}} {{review.user_id.last_name}}</div>
+                                        <div class="col-lg-4 text-right text-secondary"
+                                            style="font-size: small; text-align:right">
+                                            {{ review.time_created|date:"F j, Y" }}
+                                        </div>
+                                    </div>
+
+
+                                </h5>
+
+                                <p>{{ review.review }}
+                                </p>
+
+                            </div>
+
+                        </div>
+                        {% if remaining_reviews%}
+                        <a href="#load-More" id="load-more">Load more reviews <i
+                                class="fa-sharp fa-solid fa-arrow-right "></i></a>
+                        {% else %}
+                        <h1></h1>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    {%for review in remaining_reviews %}
+                    <div class="col-md-12 mb-2 post hidden">
+                        <div class="card p-2  px-4 mb-2 ">
+                            <div class="user-content">
+
+                                <h5 class="mb-3 mt-1 ratings">
+
+
+                                    <div class="row">
+                                        <div class="col-lg-8"><i class="fa fa-star text-warning me-2">{{review.rating}}
+                                            </i>
+                                            {{review.user_id.first_name}} {{review.user_id.last_name}}</div>
+                                        <div class="col-lg-4 text-right text-secondary"
+                                            style="font-size: small; text-align:right">
+                                            {{ review.time_created|date:"F j, Y" }}
+                                        </div>
+                                    </div>
+
+                                </h5>
+
+                                <p>{{ review.review }}
+                                </p>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
+                </div>
+
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-5      form_css ">
+                    <div class="container  mb-4">
+                        <div class="row">
+                            <div class="col-lg-4 ">
+                                <div style="font-size: 75px;">{{avg_rating|floatformat:1}}</div>
+                                <p class="text-secondary">OverallRating</p>
+                            </div>
+                            <div class="col-lg-8 ">
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="row d-flex align-items-center text-center">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">5 <span
+                                                    class="fa fa-star checked text-warning mt-1"
+                                                    style="position: absolute;"></span>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="bar-container ">
+                                                    <div class="bar-5"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{five_star}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="row d-flex align-items-center text-center">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">4 <span
+                                                    class="fa fa-star checked text-warning mt-1"
+                                                    style="position: absolute;"></span>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="bar-container ">
+                                                    <div class="bar-4"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{four_star}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="row d-flex align-items-center text-center">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">3 <span
+                                                    class="fa fa-star checked text-warning mt-1"
+                                                    style="position: absolute;"></span>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="bar-container ">
+                                                    <div class="bar-3"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{three_star}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="row d-flex align-items-center text-center">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">2 <span
+                                                    class="fa fa-star checked text-warning mt-1"
+                                                    style="position: absolute;"></span>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="bar-container ">
+                                                    <div class="bar-2"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{two_star}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="row d-flex align-items-center text-center">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">1 <span
+                                                    class="fa fa-star checked text-warning mt-1"
+                                                    style="position: absolute;"></span>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="bar-container ">
+                                                    <div class="bar-1"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{one_star}}</div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label ">Review :</label>
+                        <textarea class="form-control" id="review" rows="3"
+                            placeholder="write your review here.."></textarea>
+                    </div>
+
+                    <div style="display:None; color:red;" id="hidden">
+
+                    </div>
+                    <div class="row float-end">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                            <div class=" star ">
+
+
+                                <input class="star star-5 starimp" id="star-5" type="radio" name="star" value="5" />
+
+                                <label class="star star-5 " for="star-5"></label>
+
+                                <input class="star star-4 starimp" id="star-4" type="radio" name="star" value="4" />
+
+                                <label class="star star-4" for="star-4"></label>
+
+                                <input class="star star-3 starimp" id="star-3" type="radio" name="star" value="3" />
+
+                                <label class="star star-3  " for="star-3"></label>
+
+                                <input class="star star-2  starimp" id="star-2" type="radio" name="star" value="2" />
+
+                                <label class="star star-2  " for="star-2"></label>
+
+                                <input class="star star-1  starimp" id="star-1" type="radio" name="star" value="1" />
+
+                                <label class="star star-1" for="star-1"></label>
+
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-4 float-end">
+
+                            <div class="d-grid">
+                                <button class="btn btn-success  " type="button" id="submit"
+                                    val="{{property.id}}">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-md-5 form_css ">
+                <div class="container  mb-4">
+                    <div class="row">
+                        <div class="col-lg-4 ">
+                            <div style="font-size: 75px;">{{avg_rating|floatformat:1}}</div>
+                            <p class="text-secondary">OverallRating</p>
+                        </div>
+                        <div class="col-lg-8 ">
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">5 <span
+                                                class="fa fa-star checked text-warning mt-1"
+                                                style="position: absolute;"></span>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="bar-container ">
+                                                <div class="bar-5"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{five_star}}</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">4 <span
+                                                class="fa fa-star checked text-warning mt-1"
+                                                style="position: absolute;"></span>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="bar-container ">
+                                                <div class="bar-4"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{four_star}}</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">3 <span
+                                                class="fa fa-star checked text-warning mt-1"
+                                                style="position: absolute;"></span>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="bar-container ">
+                                                <div class="bar-3"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{three_star}}</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">2 <span
+                                                class="fa fa-star checked text-warning mt-1"
+                                                style="position: absolute;"></span>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="bar-container ">
+                                                <div class="bar-2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{two_star}}</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 ">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">1 <span
+                                                class="fa fa-star checked text-warning mt-1"
+                                                style="position: absolute;"></span>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                            <div class="bar-container ">
+                                                <div class="bar-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">{{one_star}}</div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label ">Review :</label>
+                    <textarea class="form-control" id="review" rows="3"
+                        placeholder="write your review here.."></textarea>
+                </div>
+
+                <div style="display:None; color:red;" id="hidden">
+
+                </div>
+                <div class="row float-end">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                        <div class=" star ">
+
+
+                            <input class="star star-5 starimp" id="star-5" type="radio" name="star" value="5" />
+
+                            <label class="star star-5 " for="star-5"></label>
+
+                            <input class="star star-4 starimp" id="star-4" type="radio" name="star" value="4" />
+
+                            <label class="star star-4" for="star-4"></label>
+
+                            <input class="star star-3 starimp" id="star-3" type="radio" name="star" value="3" />
+
+                            <label class="star star-3  " for="star-3"></label>
+
+                            <input class="star star-2  starimp" id="star-2" type="radio" name="star" value="2" />
+
+                            <label class="star star-2  " for="star-2"></label>
+
+                            <input class="star star-1  starimp" id="star-1" type="radio" name="star" value="1" />
+
+                            <label class="star star-1" for="star-1"></label>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 float-end">
+
+                        <div class="d-grid">
+                            <button class="btn btn-success  " type="button" id="submit"
+                                val="{{property.id}}">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif%}
+
+        </div>
+    </section>
+
+
+
+
+
+    <!--reviews ends-->
+
+
+
+    <!--footer starts-->
+    <!-- <div class="footer_container mt-3">
+        <h1 class="footerTitle">HouseRenting</h1>
+        <div class="footer">
+            <div class="fLists">
+                <ul class="fList">
+                    <li class="fListItem">Countries</li>
+                    <li class="fListItem">Cites</li>
+                    <li class="fListItem">Regions</li>
+                    <li class="fListItem">Streets</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Houses</li>
+                    <li class="fListItem">Apartments</li>
+                    <li class="fListItem">Hostels</li>
+                    <li class="fListItem">Penthouses</li>
+                    <li class="fListItem">Studio Apartments</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Unique places to stay</li>
+                    <li class="fListItem">Best Locations</li>
+                    <li class="fListItem">Cheapest locations</li>
+                    <li class="fListItem">Luxury properties</li>
+                    <li class="fListItem">Best deals</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Car rental</li>
+                    <li class="fListItem">Flight Finder</li>
+                    <li class="fListItem">Restaurant reservations</li>
+                    <li class="fListItem">Agents</li>
+                </ul>
+                <ul class="fList">
+                    <li class="fListItem">Customer Service</li>
+                    <li class="fListItem">Help</li>
+                    <li class="fListItem">Press center</li>
+                    <li class="fListItem">Safety standards</li>
+                    <li class="fListItem">Terms & conditions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="fText">Copyright © 2023.</div>
+    </div> -->
+    <!-- footer ends -->
+    <!--footer starts-->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">About Us</a>
+                    <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Terms &
+                        Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Photo Gallery</h5>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-1.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-2.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-3.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-4.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-5.jpg' %}" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded bg-light p-1" src="{% static 'property-6.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">House Rentel</h5>
+                    <p>Fill a house with love it becomes home.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button" class="btn btn-danger py-2 position-absolute top-0 end-0 ">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">House Rental</a>, All Right Reserved.
+
+
+                        Designed By <a class="border-bottom" href="">House Rental</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer ends -->
+
+    <!-- <script>
+        // const link = document.querySelector('#my-link');
+        // const myDiv1 = document.querySelector('.my-div1');
+
+        // link.addEventListener('click', function () {
+        //     myDiv1.style.display = 'block';
+        //     link.style.display = 'none';
+        // });
+        document.addEventListener('DOMContentLoaded', function() {
+  const link = document.querySelector('#my-link');
+  const myDiv1 = document.querySelector('.my-div1');
+
+  link.addEventListener('click', function () {
+    myDiv1.style.display = 'block';
+    link.style.display = 'none';
+  });
+});
+
+
+    </script> -->
+    <script>
+        $(".check").click(function () {
+            var id = $(this).attr("id");
+            window.location.href = "http://127.0.0.1:8000/rentee/properties/detail/images?id=" + id;
+        });
+        // var loadMoreBtn = document.getElementById("load-more");
+        // var hiddenPosts = document.querySelectorAll(".post.hidden");
+        // var numHiddenPosts = hiddenPosts.length;
+        // var numPostsToShow = numHiddenPosts; // Change this to show more or fewer posts at a time
+
+        // loadMoreBtn.addEventListener("click", function (e) {
+
+        //     e.preventDefault();
+        //     if (numHiddenPosts > 0) {
+        //         var numToShow = Math.min(numPostsToShow, numHiddenPosts);
+        //         for (var i = 0; i < numToShow; i++) {
+        //             hiddenPosts[i].classList.remove("hidden");
+        //         }
+        //         numHiddenPosts -= numToShow;
+        //     }
+        //     if (numHiddenPosts === 0) {
+        //         loadMoreBtn.style.display = "none";
+        //     }
+        // });
+        var loadMoreBtn = document.getElementById("load-more");
+        if (loadMoreBtn) {
+            var hiddenPosts = document.querySelectorAll(".post.hidden");
+            var numHiddenPosts = hiddenPosts.length;
+            var numPostsToShow = numHiddenPosts; // Change this to show more or fewer posts at a time
+
+            loadMoreBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (numHiddenPosts > 0) {
+                    var numToShow = Math.min(numPostsToShow, numHiddenPosts);
+                    for (var i = 0; i < numToShow; i++) {
+                        hiddenPosts[i].classList.remove("hidden");
+                    }
+                    numHiddenPosts -= numToShow;
+                }
+                if (numHiddenPosts === 0) {
+                    loadMoreBtn.style.display = "none";
+                }
+            });
+        } else {
+            console.error("Could not find element with id 'load-more'");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var value = 0;
+
+        $(".starimp").click(function () {
+
+
+            var str = ($(this).attr('value'));
+            value = parseInt(str);
+
+        });
+
+        $("#submit").click(function () {
+
+
+
+            var id = $("#submit").attr("val");
+
+            var error = "";
+            if (value == 0) {
+                error = "Please give some rating...";
+            }
+            var review = $("#review").val();
+            if (review.length == 0)
+                error = error + "please give some review";
+            if (review.length > 500)
+                error = error + "Review must be less than 500 characters and you need to remove " + (review.length - 500) + "characters";
+
+            $("#hidden").text(error);
+            $("#hidden").show();
+
+            if (error.length == 0) {
+
+                var data = {
+                    "review": review,
+                    "rating": value,
+                    "id": id
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "/rentee/postreview/",
+                    data: JSON.stringify(data),
+                    success: function (response) {
+                        // alert(response.status);
+                        $("#hidden").css('color', 'green')
+                        $("#hidden").text(response.status)
+                        $("#hidden").show()
+                        location.reload();
+                    },
+                    contentType: "application/json"
+                });
+            }
+
+        });
+
+
+        const bar5 = document.querySelector('.bar-5');
+        bar5.style.width = '{{percentage_5_star}}%';
+        const bar4 = document.querySelector('.bar-4');
+        bar4.style.width = '{{percentage_4_star}}%';
+        const bar3 = document.querySelector('.bar-3');
+        bar3.style.width = '{{percentage_3_star}}%';
+        const bar2 = document.querySelector('.bar-2');
+        bar2.style.width = '{{percentage_2_star}}%';
+        const bar1 = document.querySelector('.bar-1');
+        bar1.style.width = '{{percentage_1_star}}%';
+
+
+    </script>
+</body>
+
+</html>

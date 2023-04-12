@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+
+    <title>House Rental App</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+    <style>
+      .wp-block-cb-carousel .slick-slide {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      nav {
+        background-color: #dc3445;
+      }
+
+      .contain {
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contain bg-white" width="100%">
+      <!-- Navbar Start -->
+      <div class="nav-bar">
+        <nav
+          class="navbar fixed-top navbar-expand-lg navbar-light"
+          style="height: 11.5%"
+        >
+          <a
+            href="http://127.0.0.1:8000/login/home"
+            class="navbar-brand d-flex align-items-center text-center"
+          >
+            <div class="icon p-2 me-2">
+              <img
+                class="img-fluid"
+                src="{% static 'logo.png' %}"
+                alt="Icon"
+                style="width: 30px; height: 30px"
+              />
+            </div>
+            <h1 class="m-0" style="color: white">House Rental</h1>
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarCollapse"
+          >
+            <div class="navbar-nav ms-auto">
+              <a
+                href="http://127.0.0.1:8000/login/home"
+                class="nav-item nav-link active"
+                style="color: white"
+                >Home</a
+              >
+              <a
+                href="http://localhost:8000/login/about"
+                class="nav-item nav-link"
+                style="color: white"
+                >About</a
+              >
+
+              <a href="#contact" class="nav-item nav-link" style="color: white"
+                >Contact</a
+              >
+              <a
+                href="/login/signup"
+                class="nav-item nav-link"
+                style="color: white"
+                >Sign Up</a
+              >
+              <a
+                href="/login/login/"
+                class="nav-item nav-link"
+                style="color: white"
+                >Login</a
+              >
+            </div>
+            <!--<a href="" class="btn btn-danger px-3 d-none d-lg-flex">Add Property</a> -->
+          </div>
+        </nav>
+      </div>
+
+      {% block content %}
+      <div
+        class="container-fluid header bg-white p-0 mt-3"
+        style="margin-top: 5rem"
+      >
+        <div
+          class="row g-0 align-items-center flex-column-reverse flex-md-row mt-2"
+        >
+          <div class="col-md-6 p-5 mt-lg-5">
+            <h1 class="display-5 animated fadeIn mb-4">
+              Find A <span class="text-danger">Perfect Home</span> To Live With
+              Your Family
+            </h1>
+            <p class="animated fadeIn mb-4 pb-2">
+              Owning a home is a keystone of wealth
+            </p>
+            <p class="animated fadeIn mb-4 pb-2">
+              Home is where our story begins…
+            </p>
+            <a
+              href="/login/signup"
+              class="btn btn-danger py-3 px-5 me-3 animated fadeIn"
+              >Signup</a
+            >
+          </div>
+          <div class="col-md-6 animated fadeIn">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div class="carousel-inner" style="margin-top: 5rem">
+                <div class="carousel-item active">
+                  <img
+                    class="d-block w-100"
+                    src="{% static 'house3.avif'%}"
+                    alt="First slide"
+                    height="400"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <div class="container">
+                      <h1 style="height: fit-content">Instant Home</h1>
+                      <p style="height: max-content; font-size: medium">
+                        Home is the starting place of love, hope and dreams
+                      </p>
+                      <a href="/login/signup" class="btn btn-lg btn-danger"
+                        >Sign up today</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="{% static 'house5.jpg'%}"
+                    alt="Third slide"
+                    height="400"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <div class="container">
+                      <h1 style="height: fit-content; color: black">
+                        Find a place to live with your family
+                      </h1>
+                      <p style="height: max-content"></p>
+                      <a href="/login/signup" class="btn btn-lg btn-danger"
+                        >Login</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="{% static 'house7.jpg'%}"
+                    alt="Third slide"
+                    height="400"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <div class="container">
+                      <h1 style="height: fit-content; color: antiquewhite">
+                        Looking for rooms search here...
+                      </h1>
+                      <a href="/login/signup" class="btn btn-lg btn-danger"
+                        >search</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix carousel-item">
+                  <img
+                    class="d-block w-100"
+                    src="{% static 'house4.avif'%}"
+                    alt="Third slide"
+                    height="400"
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <div class="container">
+                      <h1 style="height: fit-content; color: white">
+                        Fill a house with love it becomes a home
+                      </h1>
+                      <p style="height: max-content"></p>
+                      <a href="/login/signup" class="btn btn-lg btn-danger"
+                        >Login</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header End -->
+
+      <!-- Category Start -->
+      <div class="container-xxl py-5">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 600px"
+          >
+            <h1 class="mb-3" id="proptype">Property Types</h1>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'apartments.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Apartment</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'villa.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Villa</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'house.jpg' %}"
+                      alt="Icon"
+                      href="login"
+                    />
+                  </div>
+                  <h6>Home</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'housing.avif' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Office</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'buildings.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Building</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'neignbour.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Townhouse</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'shop.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Shop</h6>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+              <a
+                href="/login/login/"
+                class="cat-item d-block bg-light text-center rounded p-3"
+              >
+                <div class="rounded p-4">
+                  <div class="icon mb-3">
+                    <img
+                      class="img-fluid"
+                      src="{% static 'luxury.jpg' %}"
+                      alt="Icon"
+                    />
+                  </div>
+                  <h6>Garage</h6>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Category End -->
+
+      <!-- About Start -->
+      <div class="container-xxl py-5" id="about">
+        <div class="container">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                <img class="img-fluid w-100" src="{% static 'house6.jpg' %}" />
+              </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <h1 class="mb-4">Place To Find The Perfect Property</h1>
+              <h6 class="mb-4">Features of a good house</h6>
+              <p>
+                <i class="fa fa-check text-danger me-3"></i>Should be clean and
+                airy. The hall (living room) and all the rooms should have
+                ventilation
+              </p>
+              <p>
+                <i class="fa fa-check text-danger me-3"></i>Should have
+                different or separate places for different purposes like
+                cooking, eating sleeping, bathing, resting, studying and
+                storage. However, if the house is very small the same single
+                room could be used for many purposes.
+              </p>
+              <a
+                class="btn btn-danger py-3 px-5 mt-3"
+                href="http://localhost:8000/login/about"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- About End -->
+
+      <!-- Property List Start -->
+      <!--
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-0 gx-5 align-items-end">
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h1 class="mb-3">Property Listing</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-danger active" data-bs-toggle="pill" href="#tab-1">Featured</a>
+                        </li>
+                        <li class="nav-item me-0">
+                            <a class="btn btn-outline-danger" data-bs-toggle="pill" href="#tab-3">For Rent</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="tab-content">
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-1.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        </div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Appartment</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-2.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            For Rent</div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-3.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        </div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Office</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-4.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            For Rent</div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Building</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-5.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        </div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Home</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href=""><img class="img-fluid" src="{% static 'property-6.jpg' %}"
+                                                alt=""></a>
+                                        <div
+                                            class="bg-danger rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            For Rent</div>
+                                        <div
+                                            class="bg-white rounded-top text-danger position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                            Shop</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-danger mb-3">Rs 12,345</h5>
+                                        <a class="d-block h5 mb-2" href="">Golden Urban House </a>
+                                        <p><i class="fa fa-map-marker-alt text-danger me-2"></i>123 Street</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-ruler-combined text-danger me-2"></i>1000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i
+                                                class="fa fa-bed text-danger me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i
+                                                class="fa fa-bath text-danger me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <a class="btn btn-danger py-3 px-5" href="">Browse More Property</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+      <!-- Property List End -->
+
+      <!-- Team Start -->
+      <div class="container-xxl py-5" id="contact">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-5 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 600px"
+          >
+            <h1 class="mb-3">Property Agents</h1>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="team-item rounded overflow-hidden">
+                <div class="position-relative">
+                  <img
+                    class="img-fluid"
+                    src="{% static 'team-1.jpg' %}"
+                    alt=""
+                  />
+                  <div
+                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center"
+                  >
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4 mt-3">
+                  <h5 class="fw-bold mb-0">Sophia</h5>
+                  <small>Contact No:8903456789</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="team-item rounded overflow-hidden">
+                <div class="position-relative">
+                  <img
+                    class="img-fluid"
+                    src="{% static 'team-2.jpg' %}"
+                    alt=""
+                  />
+                  <div
+                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center"
+                  >
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4 mt-3">
+                  <h5 class="fw-bold mb-0">John</h5>
+                  <small>Contact No:6987652378</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="team-item rounded overflow-hidden">
+                <div class="position-relative">
+                  <img
+                    class="img-fluid"
+                    src="{% static 'team-3.jpg' %}"
+                    alt=""
+                  />
+                  <div
+                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center"
+                  >
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4 mt-3">
+                  <h5 class="fw-bold mb-0">Sarah Hyland</h5>
+                  <small>Contact No:6789432566</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="team-item rounded overflow-hidden">
+                <div class="position-relative">
+                  <img
+                    class="img-fluid"
+                    src="{% static 'team-4.jpg' %}"
+                    alt=""
+                  />
+                  <div
+                    class="position-absolute start-50 top-100 translate-middle d-flex align-items-center"
+                  >
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-square mx-1" href=""
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="text-center p-4 mt-3">
+                  <h5 class="fw-bold mb-0">Vyshnav</h5>
+                  <small>Contact No:7327396702</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Team End -->
+
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+        id="foot"
+      >
+        <div class="container py-5">
+          <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+              <h5 class="text-white mb-4">Get In Touch</h5>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-3"></i>123 Street
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>info@example.com
+              </p>
+              <div class="d-flex pt-2">
+                <a
+                  target="_blank"
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.riktamtech.com/"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  target="_blank"
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.riktamtech.com/"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  target="_blank"
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.riktamtech.com/"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a
+                  target="_blank"
+                  class="btn btn-outline-light btn-social"
+                  href="https://www.riktamtech.com/"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h5 class="text-white mb-4">Quick Links</h5>
+              <a
+                class="btn btn-link text-white-50"
+                href="http://localhost:8000/login/about"
+                >About Us</a
+              >
+              <a class="btn btn-link text-white-50" href="#contact"
+                >Contact Us</a
+              >
+              <a
+                class="btn btn-link text-white-50"
+                href="http://localhost:8000/login/about#services"
+                >Our Services</a
+              >
+              <a
+                class="btn btn-link text-white-50"
+                href="http://localhost:8000/login/about#policy"
+                >Privacy Policy</a
+              >
+              <a
+                class="btn btn-link text-white-50"
+                href="http://localhost:8000/login/about#terms"
+                >Terms & Condition</a
+              >
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h5 class="text-white mb-4">Photo Gallery</h5>
+              <div class="row g-2 pt-2">
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-1.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-2.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-3.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-4.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-5.jpg' %}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    class="img-fluid rounded bg-light p-1"
+                    src="{% static 'property-6.jpg' %}"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h5 class="text-white mb-4">House Renting</h5>
+              <p>Fill a house with love it becomes a home.</p>
+              <div class="position-relative mx-auto" style="max-width: 400px">
+                <button
+                  type="button"
+                  class="btn btn-danger py-2 position-relative top-0 end-0 mt-1 me-1"
+                >
+                  <a href="/login/signup/" style="color: white">SignUp</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">House Rental</a>, All
+                Right Reserved. Designed By
+                <a class="border-bottom" href="">House Rental</a>
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+
+    <!-- Template Javascript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

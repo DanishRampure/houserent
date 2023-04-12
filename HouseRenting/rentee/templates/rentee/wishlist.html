@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+    </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script> -->
+  <title>House Rental App</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+<style>
+  #intro {
+    background-repeat: no-repeat;
+    background-size: 1800px 900px;
+    background-color: white;
+    background-position: top;
+    background-attachment: fixed;
+  }
+
+  .search {
+    border: 2px solid#febb02;
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 20.5px;
+    transition: width 0.4s linear
+  }
+
+  .search .search-input {
+    padding: 0 10px;
+    width: 100%;
+    caret-color: black;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    transition: width 0.4s linear;
+  }
+
+
+  .search-icon {
+    height: 34px;
+    width: 74px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #DC3445;
+    font-size: 10px;
+    bottom: 30px;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .search-icon:hover {
+
+    color: #fff !important;
+  }
+
+  a:link {
+    text-decoration: none
+  }
+
+  .wp-block-cb-carousel .slick-slide {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  nav {
+    background-color: #DC3445;
+  }
+
+  .heart {
+    padding-top: 15%;
+  }
+
+  .header {
+    padding-top: 8%;
+    background-color: #DC3445;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+  }
+
+  .headerContainer.listMode {
+    margin: 20px 0px 0px 0px;
+  }
+
+  .headerList {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .headerListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .headerListItem.active {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .headerDesc {
+    margin: 20px 0px;
+  }
+
+  .headerBtn {
+    background-color: #DC3445;
+    color: white;
+    font-weight: 500;
+    border: none;
+    /* padding-top: 0px; */
+    cursor: pointer;
+    border-radius: 0px 14px 14px 0px;
+  }
+
+  .headerSearch {
+
+    height: 30px;
+    background-color: white;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 0px;
+    border-radius: 15px;
+    position: relative;
+    /*width: 30vw; */
+    /* max-width: 60%; */
+  }
+
+  .headerIcon {
+    color: lightgray;
+  }
+
+  .headerSearchItem {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 10px;
+  }
+
+  .headerSearchInput {
+    border: none;
+    outline: none;
+    /* border-radius: 15px;
+            padding: 3px 0px;
+            border: 3px solid #febb02; */
+    height: 20px;
+    background-color: white;
+    /* border: 3px solid #febb02; */
+    display: flex;
+    /* align-items: center;
+            justify-content: center;
+            margin-left: 3px;
+            padding: 3px 2px;
+            border-radius: 15px;
+            position: relative; */
+  }
+
+  .headerSearchText {
+    color: lightgray;
+    cursor: pointer;
+  }
+
+  .listContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .listWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .listSearch {
+    flex: 1;
+    background-color: #febb02;
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+    height: max-content;
+  }
+
+  .sort {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    width: 250px;
+    margin-bottom: 10px;
+    outline: none;
+    border: solid 2px #DC3445;
+  }
+
+  .lsTitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .lsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .lsItem>label {
+    font-size: 12px;
+  }
+
+  .lsItem>input {
+    height: 30px;
+    border: none;
+    padding: 5px;
+  }
+
+  .lsItem>span {
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .lsOptions {
+    padding: 10px;
+  }
+
+  .lsOptionItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 12px;
+  }
+
+  .lsOptionInput {
+    width: 80px;
+    border-radius: 4px;
+    border: none;
+    border: solid 2px #DC3445;
+    outline: none;
+  }
+
+  .listSearch>button {
+    padding: 10px;
+    background-color: #DC3445;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .listResult {
+    flex: 3;
+  }
+
+  .searchItem {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .siImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .siDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+  }
+
+  .siTitle {
+    font-size: 20px;
+    color: #0071c2;
+  }
+
+  .siDistance {
+    font-size: 12px;
+  }
+
+  .siTaxiOp {
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .siSubtitle {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .siFeatures {
+    font-size: 12px;
+  }
+
+  .siCancelOp {
+    font-size: 12px;
+    color: #008009;
+    font-weight: bold;
+  }
+
+  .siCancelOpSubtitle {
+    font-size: 12px;
+    color: #008009;
+  }
+
+  .siDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  .siDetails>span {
+    display: none;
+  }
+
+  .siRating {
+    display: flex;
+    justify-content: right;
+  }
+
+  .siRating>span {
+    font-weight: 300;
+    padding: 0px 10px 0px 0px;
+  }
+
+  .siRating>button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .siDetailTexts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .siPrice {
+    font-size: 24px;
+  }
+
+  .siTaxOp {
+    font-size: 12px;
+    color: gray;
+  }
+
+  .siCheckButton {
+    background-color: #DC3445;
+    color: white;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .fa-heart {
+    color: #7a7676;
+    /* set default color */
+    cursor: pointer;
+
+    /* change cursor to pointer when hovering over icon */
+  }
+
+  .fa-heart.active {
+    color: red;
+    /* set active color */
+  }
+
+  .circleleft {
+    position: absolute;
+    right: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 430px) {
+    .circleleft {
+      display: none;
+    }
+
+    .searchItem {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .siDesc {
+      flex-direction: column;
+    }
+
+    .siDetails {
+      flex-direction: row;
+    }
+
+    .siImg {
+      width: 100%;
+    }
+
+    .siRating>button {
+      margin-right: 20px;
+      margin-top: 40px;
+      /* width: 50px; */
+    }
+
+    .siRating>i {
+      margin-top: 40px;
+      margin-right: 30px;
+      /* width: 50px; */
+    }
+
+    .siDetails>span {
+      display: flex;
+      margin-top: 3px;
+    }
+
+    .siLaptopTitle {
+      display: none;
+    }
+
+    .siDistance {
+      font-size: 15px;
+    }
+
+    .siTaxiOp {
+      font-size: 15px;
+    }
+
+    .siSubtitle {
+      font-size: 15px;
+    }
+
+    .siFeatures {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .siCancelOp {
+      font-size: 15px;
+    }
+
+    .siCancelOpSubtitle {
+      font-size: 15px;
+    }
+  }
+
+  /* .sortcss{
+    position: relative;
+    align-items: center;
+    border: solid 2px red;
+    z-index: 1;
+    margin-bottom: 10px;
+  } */
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-danger sticky-top mb-5 p-1">
+  <div class="container-fluid">
+    <div style="display: flex;"><img class="img-fluid " src="{% static 'logo.png' %}" alt="Icon"
+        style="width: 40px; height: 40px; border-radius:50%">
+      <h2 class="text-light ms-2 fw-bold">House Rental</h2>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/home/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="http://127.0.0.1:8000/rentee/show/">Wishlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/about/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url 'logoutpage' %}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body id="intro">
+
+  <!-- Navbar End -->
+
+
+  {% block content %}
+  <section>
+    <h3 class="heading text-center fw-bold "> Your <span class="text-danger">Wishlist</span>({{count}}).</h3>
+    <div>
+      <div class="listContainer">
+        <div class="listWrapper">
+
+          <div class="listResult">
+            <!-- item start -->
+            {% if properties %}
+            {% for property in properties %}
+            <div class="searchItem">
+              <img src={{property.myImage.url}} alt="image" class="siImg" />
+              <div class="siDesc">
+                <h1 class="siTitle">{{property.flat_name}}</h1>
+                <span class="siDistance">It is a beautiful {{property.property_type}} property which is located in
+                  {{property.city}} city at {{property.address}}. </span>
+                {% if property.furnished %}
+                <span class="siTaxiOp">furnished</span>
+                {% else %}
+                <span class="siTaxiOp">Unfurnished</span>
+                {% endif %}
+                <span class="siSubtitle">
+                  {{ property.city }}
+                </span>
+                <span class="siFeatures">
+                  {{property.flat_type}} BHK • Parking:{{property.parking}} • Area: {{property.area}} sqft
+                </span>
+                <span class="siCancelOp">bond: {{property.bond}} months </span>
+                <span class="siCancelOpSubtitle">
+                  You can reserve it, by contacting the owner.
+                </span>
+              </div>
+              <div class="siDetails">
+                <div class="siRating boxy">
+                  {% if property.avg_rating %}
+                  <div>
+                    <div class="siRating">
+                      <button>{{property.avg_rating}}</button>
+                    </div>
+                    <div class="siDetails siMobileTitle">
+                      <span title="Avg Ratings" style="margin-top: 4px;">
+                        Avg Ratings
+                      </span>
+                    </div>
+                  </div>
+                  {% else %}
+                  <div>
+                    <div class="siRating boxy">
+                      <button>0.0</button>
+                    </div>
+                    <div class="siDetails siMobileTitle">
+                      <span title="No Ratngs" style="margin-top: 4px;">
+                        No Ratings
+                      </span>
+                    </div>
+
+                  </div>
+                  {% endif %}
+                </div>
+                <div class="siRating">
+                  <div>
+                    <div class="siRating">
+                      {% if property.is_wishlist %}
+                      <i class="fas fa-heart fa-2x mainheart" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Add towishlist" style="color:red; padding-top: 3px;" propertyId={{property.id}}> </i>
+                      &nbsp;
+                      {% else %}
+                      <i class="fas fa-heart fa-2x mainheart" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        title="Add towishlist" style="color:grey; padding-top: 3px;" propertyId={{property.id}}> </i>
+                      &nbsp;
+                      {% endif %}
+                    </div>
+                    <div class="siDetails siMobileTitle">
+                      <span style="margin-top: 3px; margin-right: 19px;">
+                        Wishlist
+                      </span>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="siDetailTexts">
+                  <span class="siPrice">₹{{property.ramount}}/month</span>
+                  <span class="siTaxOp">Includes taxes and fees</span>
+                  <button class="siCheckButton check" id={{property.id}}>View Details </button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p style="text-align: center;">No Properties added in your wishlist.</p>
+            {% endif %}
+            <!-- item end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="heart">
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Get In Touch</h5>
+            <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street</p>
+            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+              <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Quick Links</h5>
+            <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">About Us</a>
+            <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Contact Us</a>
+            <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/">Our Services</a>
+            <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Privacy Policy</a>
+            <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Terms & Condition</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">Photo Gallery</h5>
+            <div class="row g-2 pt-2">
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-1.jpg' %}" alt="">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-2.jpg' %}" alt="">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-3.jpg' %}" alt="">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-4.jpg' %}" alt="">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-5.jpg' %}" alt="">
+              </div>
+              <div class="col-4">
+                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-6.jpg' %}" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-4">House Rentel</h5>
+            <p>Fill a house with love it becomes home.</p>
+            <div class="position-relative mx-auto" style="max-width: 400px;">
+              <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+              <button type="button" class="btn btn-danger py-2 position-absolute top-0 end-0 ">SignUp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">House Rental</a>, All Right Reserved.
+
+
+              Designed By <a class="border-bottom" href="">House Rental</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(".check").click(function () {
+      var id = $(this).attr("id");
+      window.location.href = "http://127.0.0.1:8000/rentee/reviews/?id=" + id;
+    });
+    $('.fa-heart').click(function () {
+      $(this).toggleClass('active');
+    });
+  </script>
+
+
+  </div>
+
+  <!-- JavaScript Libraries -->
+
+
+  <!-- Template Javascript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Javascript -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'main.js' %}"></script>
+  <script>
+    function clickable(imaggeid) {
+      var input = document.getElementById(imaggeid).innerHTML;
+
+      var url = "http://127.0.0.1:8000/rentee/properties/?location=" + input;
+
+      window.location.href = decodeURIComponent(url);
+
+
+    }
+    function typeclickable(immageid1) {
+      var input = document.getElementById(immageid1).innerHTML;
+
+      var url = "http://127.0.0.1:8000/rentee/properties/type/?Property_type=" + input;
+
+      window.location.href = decodeURIComponent(url);
+
+
+    }
+    function location_clickable(immageid1) {
+      var input1 = document.getElementById(immageid1);
+      var input = input1.value;
+      if (input === '') {
+        alert("Please enter value in input field")
+      }
+      else {
+        var url = "http://127.0.0.1:8000/rentee/properties/?location=" + input;
+        // alert(url)
+
+        window.location.href = decodeURIComponent(url);
+      }
+      function finalurl() {
+        var sort = document.getElementById("sort").value;
+        console.log(sort);
+      }
+
+
+
+
+    }
+  </script>
+
+</body>
+<!--footer starts-->
+
+<!-- footer ends -->
+{% endblock %}
+<script>
+  $(".check").click(function () {
+    var id = $(this).attr("id");
+    window.location.href = "http://127.0.0.1:8000/rentee/reviews/?id=" + id;
+  });
+  $('.mainheart').click(function () {
+
+    var prop_id = $(this).attr("propertyId");
+    var color = $(this).css("color");
+
+    console.log(color);
+    if (color == "rgb(128, 128, 128)") {
+      $(this).css("color", "red");
+      var data = {
+        "prop_id": prop_id,
+        "status": "add"
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "/rentee/wishlist/",
+        data: JSON.stringify(data),
+        success: function (response) {
+
+          alert(response.status);
+
+
+        },
+        contentType: "application/json"
+      });
+
+    }
+    else {
+
+      var data = {
+        "prop_id": prop_id,
+        "status": "remove"
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "/rentee/wishlist/",
+        data: JSON.stringify(data),
+        success: function (response) {
+
+          // alert(response.status);
+          $(this).css("color", "grey");
+          location.reload();
+        },
+        contentType: "application/json"
+      });
+      $(this).css("color", "rgb(128, 128, 128)");
+
+    }
+  });
+</script>
+
+</html>

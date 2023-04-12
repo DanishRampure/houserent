@@ -1,0 +1,301 @@
+{% load static %}
+<html lang="en">
+  <head></head>
+  <body>
+    <link rel="stylesheet" static="" href="{% static 'style.css'%}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+      .form_css {
+        width: 350px;
+        margin: 0 auto;
+
+        border-radius: 5px;
+      }
+
+      .text-size {
+        font-size: small;
+      }
+
+      .btn {
+        background-color: #d82329 !important;
+
+        border-color: #d82329 !important;
+      }
+
+      .navbar {
+        height: 50px;
+        background-color: #d82329;
+        display: flex;
+        justify-content: center;
+      }
+
+      .navContainer {
+        width: 100vw;
+        max-width: 1024px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        padding-left: 10px;
+        font-size: large;
+      }
+
+      .navButton {
+        margin-right: 10px;
+        border: solid 3px #febb02;
+        padding: 3px 7px;
+        cursor: pointer;
+        border-radius: 15px;
+        color: black;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+      }
+
+      .pListTitles > h2 {
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      .footer_container {
+        background-color: #d82329;
+        width: 100vw;
+      }
+
+      .footerTitle {
+        padding-top: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .footer {
+        width: 100%;
+        width: 100vw;
+        font-size: 12px;
+      }
+
+      .fLists {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .fList {
+        list-style: none;
+        padding: 30px;
+      }
+
+      .fListItem {
+        margin-bottom: 10px;
+        color: white;
+        cursor: pointer;
+      }
+
+      .fText {
+        color: white;
+        text-align: center;
+        padding: 0px;
+        margin-top: 0px;
+        padding-bottom: 20px;
+        font-size: x-small;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+
+    <div class="navbar">
+      <div class="navContainer">
+        <span class="logo">HouseRenting</span>
+        <div class="navItems">
+          <button class="navButton">Register</button>
+          <button class="navButton">Login</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form_css border mt-5 mb-5 b">
+      <h6 class="fw-bold ps-4 pt-3">Login</h6>
+      <form class="p-4">
+        <div class="row mb-2"></div>
+
+        <div class="mb-2">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address :</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+          />
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <div class="input-group mb-3">
+              <input
+                class="form-control password"
+                id="password"
+                type="password"
+                name="password"
+              />
+              <span class="input-group-text">
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-check">
+          {% comment %}
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="invalidCheck"
+            required=""
+          />
+          <label class="form-check-label text-size" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+          {% endcomment %}
+          <div class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+        <div id="error" style="display: none"></div>
+        <div class="d-grid gap-2 col-12 mx-auto mt-3">
+          <button class="btn btn-danger" id="submit" type="button">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer_container">
+      <h1 class="footerTitle">HouseRenting</h1>
+      <div class="footer">
+        <div class="fLists">
+          <ul class="fList">
+            <li class="fListItem">Countries</li>
+            <li class="fListItem">Cites</li>
+            <li class="fListItem">Regions</li>
+            <li class="fListItem">Streets</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Houses</li>
+            <li class="fListItem">Apartments</li>
+            <li class="fListItem">Hostels</li>
+            <li class="fListItem">Penthouses</li>
+            <li class="fListItem">Studio Apartments</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Unique places to stay</li>
+            <li class="fListItem">Best Locations</li>
+            <li class="fListItem">Cheapest locations</li>
+            <li class="fListItem">Luxury properties</li>
+            <li class="fListItem">Best deals</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Car rental</li>
+            <li class="fListItem">Flight Finder</li>
+            <li class="fListItem">Restaurant reservations</li>
+            <li class="fListItem">Agents</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Customer Service</li>
+            <li class="fListItem">Help</li>
+            <li class="fListItem">Press center</li>
+            <li class="fListItem">Safety standards</li>
+            <li class="fListItem">Terms &amp; conditions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fText">Copyright © 2023.</div>
+    </div>
+    <!-- footer ends -->
+
+    <script>
+      $("#togglePassword").click(function () {
+        var type = $("#password").attr("type");
+
+        if (type == "text") {
+          $("#password").attr("type", "password");
+        }
+        if (type == "password") {
+          $("#password").attr("type", "text");
+        }
+      });
+
+      function validate() {
+        var email = $("#email").val();
+
+        var password = $("#password").val();
+
+        var error = "";
+
+        if (!email) error = error + "Email is not entered";
+        if (!password) error = error + "password is not entered";
+        $("#error").html(error);
+        console.log(error);
+        if (error.length > 0) return false;
+        return true;
+      }
+
+      $("#submit").click(function () {
+        var valid = validate();
+
+        if (valid) {
+          var user = {
+            email: $("#email").val(),
+            password: $("#password").val(),
+          };
+
+          $.ajax({
+            type: "POST",
+            url: "/login",
+            data: JSON.stringify(user),
+            success: function (response) {
+              response = JSON.parse(response);
+
+              if (!response.status) {
+                alert(response["message"]);
+              } else {
+                location.href = "/home?name=" + response.name;
+              }
+            },
+            contentType: "application/json",
+          });
+        } else {
+          $("#error").css("color", "red");
+          $("#error").show();
+        }
+      });
+    </script>
+  </body>
+</html>

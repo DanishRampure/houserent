@@ -1,0 +1,50 @@
+{% extends 'signup_page.html' %}
+{%block content %}
+<style>
+    .reg-form {
+        margin:5% 0;
+        padding: 10px;
+        max-width: 500px;
+        left:5%;
+        box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    @media(max-width: 600px) {
+        .reg-form {
+            max-height: 380px;
+            width:100%;
+        }
+
+    }
+</style>
+<div class="container reg-form" style="opacity:0.9">
+    {% if error%}
+    {% for i in errors %}
+    <div class="alert alert-danger alert-dismissible show " role="alert">
+        <strong>{{i}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {%endfor%}
+    {% endif %}
+
+    <form action="#" method="post" class="bg-light" style="border-radius:2%;padding:1rem">
+        {% csrf_token %}
+        <h3 style="text-align:center;">CHANGE PASSWORD</h3>
+        <div class="form-group">
+            <label for='password'><b>Password : </b></label>
+            <input type="password" class="form-control" placeholder="Enter New Password" name="password" required><br>
+        </div>
+        <div class="form-group">
+            <label for='password'><b>Re Enter Password : </b></label>
+            <input type="password" class="form-control" placeholder="Renter Password" name="cpassword" required><br>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success" style="margin-bottom: 0.5rem;"><b>Submit</b></button><br>
+        </div>
+
+    </form>
+    </center>
+</div>
+{%endblock%}

@@ -1,0 +1,309 @@
+{% extends 'signup_page.html' %} {% load static %}
+
+<html>
+  <head>
+    {%block title%}
+    <title>Login Page</title>
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <body>
+    {%block content %}
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-fluid {
+        margin-top: 7rem;
+      }
+      .cont1 {
+        border-radius: 10px;
+        padding: 1rem;
+        max-width: 450px;
+        margin-top: 2rem;
+        border: none;
+        background: rgb(237, 178, 178);
+        border-radius: 10px;
+        box-shadow: inset -2px 3px 3px 3px rgb(224, 62, 62);
+        box-shadow: inset 0 2px 10px #f82500;
+        padding: 1rem;
+        margin: 0 auto;
+        left: 5%;
+        border: 2px solid lightgrey;
+        box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2),
+          0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        background: linear-gradient(
+          rgba(249, 32, 32, 0.833),
+          rgba(247, 25, 25, 0.619),
+          rgba(255, 17, 17, 0.471),
+          rgba(242, 38, 38, 0.601),
+          white
+        );
+      }
+
+      .form-title {
+        font-size: 26px;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 6px;
+        color: white;
+        text-shadow: 2px 2px 2px black;
+        border-bottom: solid 1px white;
+      }
+
+      .u-type {
+        color: white;
+        font-size: 17px;
+        font-weight: 400;
+        width: 100%;
+        padding: 0 20px 0 25px;
+      }
+
+      .main-user-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+
+      .user-input-box:nth-child(2n) {
+        justify-content: end;
+      }
+
+      .user-input-box {
+        width: 95%;
+        padding: 1rem 2rem;
+      }
+
+      .user-input-box label {
+        width: 95%;
+        color: white;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 5px 0;
+      }
+
+      .user-input-box input {
+        height: 40px;
+        width: 95%;
+        border-radius: 7px;
+        outline: none;
+        border: 1px solid grey;
+        padding: 0 10px;
+      }
+
+      .form-submit-btn {
+        margin: 20px;
+      }
+
+      .form-submit-btn button {
+        display: block;
+        width: 85%;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        font-size: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        background: rgba(224, 4, 4, 0.7);
+      }
+
+      .form-submit-btn button:hover {
+        background: rgba(224, 4, 4);
+        color: rgb(255, 255, 255);
+      }
+
+      a:hover,
+      a {
+        color: white;
+        font-size: 15px;
+      }
+
+      form i {
+        margin-left: -30px;
+        cursor: pointer;
+      }
+
+      @media only screen and (max-width: 800px) {
+        .cont {
+          width: 100%;
+          margin-bottom: 0;
+          margin-top: 2rem;
+        }
+        .divcont {
+          max-width: 100%;
+        }
+        .cont1 {
+          margin: 2rem 1rem 2rem 1rem;
+        }
+
+        .user-input-box {
+          margin-bottom: 12 px;
+          width: 100%;
+          padding: 0;
+        }
+        h1 {
+          margin-top: 1rem;
+        }
+        .user-input-box:nth-child(2n) {
+          justify-content: space-between;
+        }
+
+        .u-type {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .main-user-info {
+          padding: 0;
+          max-height: 380px;
+          overflow: auto;
+          margin: 20% 5%;
+        }
+      }
+    </style>
+
+    <div class="cont cont1 col-sm-12 col-md-6 col-lg-6">
+      <div>
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+      </div>
+
+      <h1 class="form-title">LOGIN</h1>
+
+      <form action="" method="POST">
+        {%csrf_token%}
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="email" style="margin-right: 1rem">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Email Address"
+              style="margin-right: 1rem"
+              required
+            />
+          </div>
+
+          <div class="user-input-box" style="display: inline">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter Your Password"
+              title="**Password must contain Minimum eight characters, at least one letter, one number and one special character"
+              style="padding-right: 1.5rem"
+              required
+            />
+            <i
+              class="bi bi-eye-slash"
+              id="togglePassword"
+              style="align-self: center"
+            ></i>
+          </div>
+        </div>
+
+        <div class="form-submit-btn text-center">
+          <button type="submit" class="btn btn-danger"><b>LOGIN</b></button>
+          <div class="text-center">
+            <p style="color: white; font-size: 15px">
+              <a href="/login/forgotconfirm/">Forgot Password</a><br />
+              <b> Don't have an account? </b>
+              <a href="/login/signup">SignUp Here</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      const togglePassword = document.querySelector("#togglePassword");
+      const password = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("bi-eye");
+      });
+    </script>
+    <script type="text/javascript">
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout("preventBack()", 0);
+      window.onunload = function () {
+        null;
+      };
+    </script>
+    {%endblock%}
+  </body>
+</html>

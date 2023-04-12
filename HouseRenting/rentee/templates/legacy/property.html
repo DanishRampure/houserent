@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<!-- TODO: Need to fix the navbar of this page -->
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+        </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.png'%}" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/path/to/jquery-3.4.1.min.js"></script>
+
+
+    <title>Property</title>
+    <style>
+        #intro {
+            background-repeat: no-repeat;
+            background-size: 1800px 900px;
+            background-position: top;
+            background-attachment: fixed;
+        }
+
+        .wp-block-cb-carousel .slick-slide {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        nav {
+            background-color: #DC3445;
+        }
+
+        .heart {
+            padding-top: 5%;
+            padding-bottom: 8%;
+        }
+
+        .btn {
+
+
+            color: white !important;
+        }
+
+        .flex {
+            display: flex !important;
+        }
+
+        .navbar {
+            height: 50px;
+            background-color: #DC3445;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navContainer {
+            width: 100vw;
+            max-width: 1024px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+            padding-left: 10px;
+            font-size: large;
+        }
+
+        .navButton {
+            margin-right: 10px;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            color: black;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .pListTitles>h2 {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        .div {
+            height: 200px;
+            background-color: crimson;
+        }
+
+        .bg {
+            background-color: rgb(209, 208, 208);
+            padding: 200px;
+        }
+
+
+        .user-content p {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+
+        .ratings i {
+            color: rgb(246, 179, 10);
+        }
+
+        .form_css {
+
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+
+        div.stars {
+
+            width: 100px;
+
+            display: inline-block;
+
+        }
+
+
+        input.star {
+            display: none;
+        }
+
+
+
+        label.star {
+
+            float: right;
+
+            padding: 3px;
+
+            font-size: 25px;
+
+            color: #FD4;
+
+            transition: all .2s;
+            cursor: pointer !important;
+
+        }
+
+
+
+        input.star:checked~label.star:before {
+
+            content: '\f005';
+
+            color: #FD4;
+
+            transition: all .25s;
+
+        }
+
+
+        input.star-5:checked~label.star:before {
+
+            color: #FE7;
+
+            text-shadow: 0 0 20px #952;
+
+        }
+
+
+
+        input.star-1:checked~label.star:before {
+            color: #F62;
+        }
+
+
+
+        label.star:hover {
+            transform: rotate(-15deg) scale(1.3);
+        }
+
+
+
+        label.star:before {
+
+            content: '\f006';
+
+            font-family: FontAwesome;
+
+        }
+
+        .my-div1 {
+            display: none;
+        }
+
+        a:link {
+            text-decoration: none !important;
+        }
+
+        .mm {
+            margin-top: -155px !important;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .bar-5 {
+            width: 60%;
+            height: 6px;
+            background-color: #04AA6D;
+        }
+
+        .bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            color: white;
+        }
+
+        .bar-4 {
+            width: 30%;
+            height: 6px;
+            background-color: #2196F3;
+        }
+
+        .bar-3 {
+            width: 10%;
+            height: 6px;
+            background-color: #00bcd4;
+        }
+
+        .bar-2 {
+            width: 4%;
+            height: 6px;
+            background-color: #ff9800;
+        }
+
+        .bar-1 {
+            width: 15%;
+            height: 6px;
+            background-color: #f44336;
+        }
+
+        img {
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .j {
+            height: 200px;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .jnew {
+            height: 300px;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .g {
+            height: 150px;
+            width: 250px;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body id="intro">
+    <div class="container-xxl bg-white p-0">
+
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar ">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+                <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="{% static 'logo.png' %}" alt="Icon"
+                            style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0" style="color: white;">House Rental</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="http://127.0.0.1:8000/owner/home" class="nav-item nav-link active"
+                            style="color: white;">Home</a>
+                        <a href="#" class="nav-item nav-link" style="color: white;">About</a>
+
+
+                        <a href="#" class="nav-item nav-link" style="color: white;">Contact</a>
+                        <!-- <a href="/login/signup" class="nav-item nav-link" style="color: white;">Sign Up</a> -->
+                        <a href="/login/login/" class="nav-item nav-link" style="color: white;">Logout</a>
+
+                    </div>
+                    <!--<a href="" class="btn btn-danger px-3 d-none d-lg-flex">Add Property</a> -->
+                </div>
+            </nav>
+        </div>
+
+
+
+
+        {% block content %}
+        <section class="heart ">
+            <div class="container mt-5 mb-5 ">
+
+                <div class="row d-flex align-items-center">
+                    {% if images_less %}
+
+
+                    <div class="col-lg-6">
+                        <div class="row g-1">
+                            {% if images.count == 0%}
+                            <div class="col-md-12  col-sm-12 col-12 ">
+
+                                <img src={{mydata.myImage.url}} class="img-fluid  jnew1" alt="image2">
+
+                            </div>
+                            {% else %}
+                            <div class="col-md-6  col-sm-6 col-6 ">
+
+                                <img src={{mydata.myImage.url}} class="img-fluid check jnew" alt="image2"
+                                    id={{mydata.id}}>
+
+                            </div>
+                            {% endif %}
+                            {% if images.count == 1 %}
+                            <div class="col-md-6 col-sm-6 col-6 ">
+                                {% for ima in images %}
+                                {% if forloop.counter == 1 %}
+                                <img src={{ima.file.url}} class="img-fluid p-0 check jnew" alt="image5" id={{mydata.id}}
+                                    style="opacity: 0.5;   filter: blur(0.5px); 
+ ">
+                                <div
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;">
+
+                                    View all
+                                </div>
+
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+
+
+                            <div class="col-md-6  ">
+                                <div class="row g-1">
+                                    <div class="col-md-6  col-sm-6 col-6 ">
+                                        {% for ima in images %}
+                                        {% if forloop.first %}
+                                        <img src={{ima.file.url}} class="img-fluid  j" alt="image1"
+                                            onclick="location.href = './images';">
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-6 ">
+                                        {% for ima in images %}
+                                        {% if forloop.counter == 2 %}
+                                        <img src={{ima.file.url}} class="img-fluid  j" alt="image2"
+                                            onclick="location.href = './images';">
+
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="row pt-1 g-1">
+                                    <div class="col-md-4  col-sm-4 col-4">
+                                        {% for ima in images %}
+                                        {% if forloop.counter == 3 %}
+                                        <img src={{ima.file.url}} class="img-fluid p-0 g" alt="image3"
+                                            onclick="location.href = './images';">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-4">
+                                        {% for ima in images %}
+                                        {% if forloop.counter == 4 %}
+                                        <img src={{ima.file.url}} class="img-fluid p-0 g" alt="image4"
+                                            onclick="location.href = './images';">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% if images_actual_count == 0 %}
+                                    <div class="col-md-4 col-sm-4 col-4" style="position: relative;">
+
+
+                                        {% for ima in images %}
+                                        {% if forloop.counter == 5 %}
+
+                                        <img src={{ima.file.url}} class="img-fluid p-0 g" alt="image5" style="opacity: 0.5;   filter: blur(0.5px); 
+ ">
+                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                            onclick="location.href = './images';">
+
+                                            View all
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    {% else %}
+                                    <div class="col-md-4 col-sm-4 col-4" style="position: relative;">
+
+
+                                        {% for ima in images %}
+                                        {% if forloop.counter == 5 %}
+                                        <img src={{ima.file.url}} class="img-fluid p-0 g" alt="image5" style="opacity: 0.5;   filter: blur(0.5px); 
+ ">
+                                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-size:x-large ;font-weight: bold; color: white; cursor:pointer;"
+                                            onclick="location.href = './images';">
+
+                                            + {{images_actual_count }} Photos
+                                        </div>
+
+
+                                        {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            {% endif %}
+
+
+
+
+
+                            <div class="col-lg-6  ">
+                                <h4 class="fw-bold">{{mydata.flat_name}},{{mydata.city}}</h4>
+                                <p>{{mydata.address}}</p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 mt-1"><span class="fw-bold">Area</span> : {{ mydata.area }}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Total flats</span> :
+                                                {{mydata.total_flat}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Choices</span> : {{ mydata.choices }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 mt-1"><span class="fw-bold">Total floors</span> :
+                                                {{mydata.total_flat}}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Property type</span> :
+                                                {{mydata.flat_type }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Flat type</span> : {{
+                                                mydata.flat_type }} bhk</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check text-warning mt-2"></i>
+                                            {% if property.parking %}
+                                            <p class="ms-2 "><span class="fw-bold">Parking</span> Availabe</p>
+                                            {% else %}
+                                            <p class="ms-2 "><span class="fw-bold">Parking </span> :Not Availabe</p>
+                                            {% endif %}
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Property type</span> :
+                                                {{mydata.flat_type }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="flex">
+                                            <i class="fa-solid fa-circle-check  text-warning mt-2"></i>
+                                            <p class="ms-2 "><span class="fw-bold">Flat type</span> : {{
+                                                mydata.flat_type }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <h6 class="mb-2 text-success text-left  ">Renting price :</h6>
+                                <h1> ₹{{mydata.ramount}} </h1>
+
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <!--reviews start-->
+                    <div class="  container mb-5 mt-3 bg-light">
+                        <div class="container col-lg-8  p-4 ">
+                            <div class="row text-center ">
+                                <h2 class="fw-bold ">Please give your valuble feedback</h2>
+                                <p class="text-secondary"> Analyzing reviews left by your customers, helps your company
+                                    understand
+                                    overall customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                {%for review in reviews %}
+                                <div class="col-md-12 mb-2">
+                                    <div class="card p-2  px-4 mb-2 ">
+                                        <div class="user-content">
+
+                                            <h5 class="mb-3 mt-1 ratings">
+
+
+
+                                                <i class="fa fa-star text-warning me-2">{{review.rating}}</i>
+
+                                                {{ review.user_id.last_name}}
+                                            </h5>
+
+                                            <p>{{ review.review }}
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <a href="#load-More" id="load-more">Load more reviews -></a>
+                                </div>
+                                {% endfor %}
+                                {%for review in remaining_reviews %}
+                                <div class="col-md-12 mb-2 post hidden">
+                                    <div class="card p-2  px-4 mb-2 ">
+                                        <div class="user-content">
+
+                                            <h5 class="mb-3 mt-1 ratings">
+
+
+
+                                                <i class="fa fa-star text-warning me-2">{{review.rating}}</i>
+
+                                                {{ review.user_id.last_name}}
+                                            </h5>
+
+                                            <p>{{ review.review }}
+                                            </p>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-5 form_css ">
+                                <div class="container  mb-4">
+                                    <div class="row">
+                                        <div class="col-lg-4 ">
+                                            <div style="font-size: 75px;">4.1</div>
+                                            <p class="text-secondary">OverallRating</p>
+                                        </div>
+                                        <div class="col-lg-8 ">
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="row d-flex align-items-center text-center">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">5 <span
+                                                                class="fa fa-star checked text-warning mt-1"
+                                                                style="position: absolute;"></span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                            <div class="bar-container ">
+                                                                <div class="bar-5"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">150</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="row d-flex align-items-center text-center">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">4 <span
+                                                                class="fa fa-star checked text-warning mt-1"
+                                                                style="position: absolute;"></span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                            <div class="bar-container ">
+                                                                <div class="bar-4"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">75</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="row d-flex align-items-center text-center">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">3 <span
+                                                                class="fa fa-star checked text-warning mt-1"
+                                                                style="position: absolute;"></span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                            <div class="bar-container ">
+                                                                <div class="bar-3"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">75</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="row d-flex align-items-center text-center">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">2 <span
+                                                                class="fa fa-star checked text-warning mt-1"
+                                                                style="position: absolute;"></span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                            <div class="bar-container ">
+                                                                <div class="bar-2"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">75</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="row d-flex align-items-center text-center">
+                                                        <div class="col-lg-2 col-md-2 col-sm-2 col-2 ">1 <span
+                                                                class="fa fa-star checked text-warning mt-1"
+                                                                style="position: absolute;"></span>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                                            <div class="bar-container ">
+                                                                <div class="bar-1"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-1 col-md-2 col-sm-2 col-2">75</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label ">Review :</label>
+                                    <textarea class="form-control" id="review" rows="3"
+                                        placeholder="write your review here.."></textarea>
+                                </div>
+
+                                <div style="display:None; color:red;" id="hidden">
+
+                                </div>
+                                <div class="row float-end">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                        <div class=" star ">
+
+
+                                            <input class="star star-5 starimp" id="star-5" type="radio" name="star"
+                                                value="5" />
+
+                                            <label class="star star-5 " for="star-5"></label>
+
+                                            <input class="star star-4 starimp" id="star-4" type="radio" name="star"
+                                                value="4" />
+
+                                            <label class="star star-4" for="star-4"></label>
+
+                                            <input class="star star-3 starimp" id="star-3" type="radio" name="star"
+                                                value="3" />
+
+                                            <label class="star star-3  " for="star-3"></label>
+
+                                            <input class="star star-2  starimp" id="star-2" type="radio" name="star"
+                                                value="2" />
+
+                                            <label class="star star-2  " for="star-2"></label>
+
+                                            <input class="star star-1  starimp" id="star-1" type="radio" name="star"
+                                                value="1" />
+
+                                            <label class="star star-1" for="star-1"></label>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 float-end">
+
+                                        <div class="d-grid">
+                                            <button class="btn btn-success  " type="button" id="submit"
+                                                val="{{property.id}}">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+        <!--reviews ends-->
+
+        <!--footer starts-->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-1.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-2.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-3.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-4.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-5.jpg' %}" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="{% static 'property-6.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Your email">
+                            <button type="button"
+                                class="btn btn-danger py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">House Rental</a>, All Right Reserved.
+
+
+                            Designed By <a class="border-bottom" href="">House Rental</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer ends -->
+
+
+        <script>
+
+            var loadMoreBtn = document.getElementById("load-more");
+            var hiddenPosts = document.querySelectorAll(".post.hidden");
+            var numHiddenPosts = hiddenPosts.length;
+            var numPostsToShow = numHiddenPosts; // Change this to show more or fewer posts at a time
+
+            loadMoreBtn.addEventListener("click", function (e) {
+
+                e.preventDefault();
+                if (numHiddenPosts > 0) {
+                    var numToShow = Math.min(numPostsToShow, numHiddenPosts);
+                    for (var i = 0; i < numToShow; i++) {
+                        hiddenPosts[i].classList.remove("hidden");
+                    }
+                    numHiddenPosts -= numToShow;
+                }
+                if (numHiddenPosts === 0) {
+                    loadMoreBtn.style.display = "none";
+                }
+            });
+
+
+            var value = 0;
+
+            $(".starimp").click(function () {
+
+
+                var str = ($(this).attr('value'));
+                value = parseInt(str);
+
+            });
+
+            $("#submit").click(function () {
+
+
+
+                var id = $("#submit").attr("val");
+
+                var error = "";
+                if (value == 0) {
+                    error = "Please give some rating...";
+                }
+                var review = $("#review").val();
+                if (review.length == 0)
+                    error = error + "please give some review";
+                if (review.length > 500)
+                    error = error + "Review must be less than 500 characters and you need to remove " + (review.length - 500) + "characters";
+
+                $("#hidden").text(error);
+                $("#hidden").show();
+
+                if (error.length == 0) {
+
+                    var data = {
+                        "review": review,
+                        "rating": value,
+                        "id": id
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/rentee/postreview/",
+                        data: JSON.stringify(data),
+                        success: function (response) {
+                            alert(response.status);
+                            $("#hidden").css('color', 'green')
+                            $("#hidden").text(response.status)
+                            $("#hidden").show()
+                        },
+                        contentType: "application/json"
+                    });
+                }
+
+            });
+
+        </script>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+
+
+    <!-- Template Javascript -->
+    <script src="{% static 'main.js' %}"></script>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,869 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" static href="{% static 'style.css'%}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/98d084ea44.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <title>Home</title>
+
+</head>
+<style>
+  .pListImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .featuredImg {
+    height: 150px !important;
+    width: 230px;
+  }
+
+  .search {
+    border: 2px solid#febb02;
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 20px;
+    height: 50px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .search-input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: 5px;
+    caret-color: transparent;
+    line-height: 20.5px;
+    transition: width 0.4s linear
+  }
+
+  .search .search-input {
+    padding: 0 10px;
+    width: 100%;
+    caret-color: black;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    transition: width 0.4s linear;
+  }
+
+
+  .search-icon {
+    height: 34px;
+    width: 74px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #DC3445;
+    font-size: 10px;
+    bottom: 30px;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  .search-icon:hover {
+
+    color: #fff !important;
+  }
+
+  a:link {
+    text-decoration: none
+  }
+
+
+
+  .card-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 1s;
+  }
+
+
+  .card-inner:hover {
+
+    transform: scale(1.1);
+
+  }
+
+  .mg-text span {
+
+    font-size: 12px;
+
+  }
+
+  .mg-text {
+
+    line-height: 14px;
+  }
+
+  #intro {
+    background-repeat: no-repeat;
+    background-size: 1800px 900px;
+    background-color: white;
+    background-position: top;
+    background-attachment: fixed;
+  }
+
+  .wp-block-cb-carousel .slick-slide {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  nav {
+    background-color: #DC3445;
+  }
+
+  .card {
+    border: none !important;
+  }
+
+
+  .header {
+    padding-top: 8%;
+    background-color: #DC3445;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .headerContainer {
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px 0px 100px 0px;
+  }
+
+  .headerContainer.listMode {
+    margin: 20px 0px 0px 0px;
+  }
+
+  .headerList {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .headerListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .headerListItem.active {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .headerDesc {
+    margin: 20px 0px;
+  }
+
+  .headerBtn {
+    background-color: #DC3445;
+    color: white;
+    font-weight: 500;
+    border: none;
+    /* padding-top: 0px; */
+    cursor: pointer;
+    border-radius: 0px 14px 14px 0px;
+  }
+
+  .headerSearch {
+
+    height: 30px;
+    background-color: white;
+    border: 3px solid #febb02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 0px;
+    border-radius: 15px;
+    position: relative;
+    /*width: 30vw; */
+    /* max-width: 60%; */
+  }
+
+  .headerIcon {
+    color: lightgray;
+  }
+
+  .headerSearchItem {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 10px;
+  }
+
+  .headerSearchInput {
+    border: none;
+    outline: none;
+    /* border-radius: 15px;
+            padding: 3px 0px;
+            border: 3px solid #febb02; */
+    height: 20px;
+    background-color: white;
+    /* border: 3px solid #febb02; */
+    display: flex;
+    /* align-items: center;
+            justify-content: center;
+            margin-left: 3px;
+            padding: 3px 2px;
+            border-radius: 15px;
+            position: relative; */
+  }
+
+  .headerSearchText {
+    color: lightgray;
+    cursor: pointer;
+  }
+
+  .listContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .listWrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .listSearch {
+    flex: 1;
+    background-color: #febb02;
+    padding: 10px;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+    height: max-content;
+  }
+
+  .sort {
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    color: black;
+  }
+
+  .lsTitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .lsItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .lsItem>label {
+    font-size: 12px;
+  }
+
+  .lsItem>input {
+    height: 30px;
+    border: none;
+    padding: 5px;
+  }
+
+  .lsItem>span {
+    height: 30px;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .lsOptions {
+    padding: 10px;
+  }
+
+  .lsOptionItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 12px;
+  }
+
+  .lsOptionInput {
+    width: 50px;
+    border-radius: 6px;
+    border: none;
+  }
+
+  .listSearch>button {
+    padding: 10px;
+    background-color: #DC3445;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .listResult {
+    flex: 3;
+  }
+
+  .searchItem {
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .siImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .siDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+  }
+
+  .siTitle {
+    font-size: 20px;
+    color: #0071c2;
+  }
+
+  .siDistance {
+    font-size: 12px;
+  }
+
+  .siTaxiOp {
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .siSubtitle {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .siFeatures {
+    font-size: 12px;
+  }
+
+  .siCancelOp {
+    font-size: 12px;
+    color: #008009;
+    font-weight: bold;
+  }
+
+  .siCancelOpSubtitle {
+    font-size: 12px;
+    color: #008009;
+  }
+
+  .siDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+  }
+
+  .siRating {
+    display: flex;
+    justify-content: right;
+  }
+
+  .siRating>span {
+    font-weight: 300;
+    padding: 0px 10px 0px 0px;
+  }
+
+  .siRating>button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .siDetailTexts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .siPrice {
+    font-size: 24px;
+  }
+
+  .siTaxOp {
+    font-size: 12px;
+    color: gray;
+  }
+
+  .siCheckButton {
+    background-color: #DC3445;
+    color: white;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .heart {
+    position: relative;
+    top: 10px;
+  }
+
+  .abtimg {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+</style>
+
+<body>
+
+
+  <!--container for 6 images start-->
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger sticky-top mb-5 p-1">
+    <div class="container-fluid">
+      <div style="display: flex;"><img class="img-fluid " src="{% static 'logo.png' %}" alt="Icon"
+          style="width: 40px; height: 40px; border-radius:50%">
+        <h2 class="text-light ms-2 fw-bold">House Rental</h2>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/home/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="http://127.0.0.1:8000/rentee/show/">Wishlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  text-white" href="http://127.0.0.1:8000/rentee/about/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'logoutpage' %}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar end -->
+  <div class="container ">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-9">
+        <h2 class="heading  text-center fw-bold">Hey <span class="text-danger">{{first_name}}</span> , "Finding
+          your dream <span class="text-danger">home</span> is just a click away." <span class="text-danger">
+            #</span>RentingMadeEasy</h2>
+        <div class="d-flex justify-content-center px-5">
+          <div class="search"> <input type="text" class="search-input" id="search-input12"
+              placeholder="Enter City Name " name="">
+            <a href="#" class="search-icon" onclick="location_clickable('search-input12')" id="search123"> <i
+                class="fa fa-search"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--container for 4 images end-->
+  <div class="container text-center mt-4">
+    <h4 class="  mt-5 thick fw-bold ">
+      Quick and easy planer for exciting deals browse by <span class="text-danger">location</span>
+    </h4>
+
+
+    <p class="text-secondary mb-3">
+      Select your favourite apartment for rent
+    </p>
+    <div class="row d-flex justify-content-center">
+
+
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <a href="#" onclick="clickable('search-input1')" id="search1"><img
+              src="https://cf.bstatic.com/xdata/images/city/max500/957801.webp?k=a969e39bcd40cdcc21786ba92826063e3cb09bf307bcfeac2aa392b838e9b7a5&o="
+              alt="" class="featuredImg img-fluid rounded-3" />
+
+          </a>
+        </div>
+
+        <p class="fw-bold pt-2" id="search-input1">Ongole </p>
+
+
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <a href="#" onclick="clickable('search-input2')" id="search1"><img
+              src="https://cf.bstatic.com/xdata/images/city/max500/690334.webp?k=b99df435f06a15a1568ddd5f55d239507c0156985577681ab91274f917af6dbb&o="
+              alt="" class="featuredImg img-fluid rounded-3" />
+
+          </a>
+        </div>
+        <div class="fw-bold pt-2">
+          <p id="search-input2">Hyderabad</p>
+
+        </div>
+
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <a href="#" onclick="clickable('search-input3')" id="search1"><img
+              src="https://cf.bstatic.com/xdata/images/city/max500/689422.webp?k=2595c93e7e067b9ba95f90713f80ba6e5fa88a66e6e55600bd27a5128808fdf2&o="
+              alt="" class="featuredImg img-fluid rounded-3" />
+          </a>
+        </div>
+
+
+        <p class="fw-bold pt-2" id="search-input3">Delhi</p>
+
+
+      </div>
+
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <a href="#" onclick="clickable('search-input4')" id="search1"><img
+              src="https://r-xx.bstatic.com/xdata/images/city/300x240/684765.jpg?k=3f7d20034c13ac7686520ac1ccf1621337a1e59860abfd9cbd96f8d66b4fc138&o=alt=""
+              class=" featuredImg img-fluid rounded-3" />
+
+          </a>
+        </div>
+
+        <p class="fw-bold pt-2" id="search-input4">Banglore</p>
+
+
+
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <a href="#" onclick="clickable('search-input5')" id="search1"><img
+              src="https://q-xx.bstatic.com/xdata/images/city/300x240/684657.jpg?k=66dc5035b43e9bb86b756e381e4fec2558064af4a63a8af17836725a854c03ee&o=alt="
+              class="featuredImg img-fluid rounded-3" />
+
+          </a>
+        </div>
+
+        <p class="fw-bold pt-2" id="search-input5">Jaipur</p>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!--container for 3 images start-->
+  <div class="container  mt-5 text-center">
+    <h4 class="fw-bold thick">
+      We have excited deals in different <span class="text-danger">Property
+        types</span>
+    </h4>
+
+
+    <p class="text-secondary ">
+      Select your favourite apartment for rent
+    </p>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-12 cursor mb-4" style="cursor: pointer;">
+        <div class="card w-100">
+
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/square600/44146554.webp?k=bc461f3aff9a66c15ddae3b3a7e10a44f6aea550cb89ce292cec7ca0b4ccecdb&o=&s=1"
+            alt="" class="pListImg  img-fluid" />
+
+          <p class=" fw-bold pt-2 " id="bhkinput1">1BHK Residential House</p>
+        </div>
+
+
+
+
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-12 cursor mb-4" style="cursor: pointer;">
+        <div class="card w-100">
+
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=e148feeb802ac3d28d1391dad9e4cf1e12d9231f897d0b53ca067bde8a9d3355&o=&s=1"
+            alt="" class="pListImg  img-fluid" />
+
+          <p class="fw-bold pt-2 ">2BHK Multistory apartment</p>
+        </div>
+
+
+
+
+
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-12 cursor mb-4" style="cursor: pointer;">
+        <div class="card w-100">
+
+          <img
+            src="https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg"
+            alt="" class="pListImg  img-fluid" />
+
+          <p class="fw-bold pt-2 ">3BHK Residential House</p>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- recently viewd starts -->
+
+
+
+
+
+  <!-- <p class="text-secondary ">
+        Select your favourite apartment for rent
+      </p> -->
+
+
+
+  <div class="container text-center mt-3">
+
+    <div class="row d-flex justify-content-center">
+      {% if recently_viewed_properties %}
+      <h4 class="fw-bold  mt-5 thick ">
+        Recently viewed <span class="text-danger">Properties</span>
+      </h4>
+
+
+      <p class="text-secondary mb-3">
+        Select from your recently viewed properties
+      </p>
+      {% else %}
+      <h4></h4>
+      {% endif %}
+
+      {% for recent_property in recently_viewed_properties %}
+      <div class="col-lg-2 col-md-2 col-sm-6 col-6 cursor mb-4">
+        <div class="card w-100 ">
+          <img src={{recent_property.myImage.url}} alt="image" class="siImg img-fluid rounded-3 featuredImg"
+            id={{recent_property.id}} onclick="type_clickable('{{recent_property.id}}')" style="cursor: pointer;" />
+
+          <div class="card-body">
+            <h5 class="card-title">{{recent_property.flat_name}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                              content.
+                            </p> -->
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+      {% endfor %}
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  <!-- div class="container">
+        <h1>{{recently_viewed_products}}</h1>
+        <img src="{{ recently_viewed_products.image_url }}" class="main_image" />
+        <p>{{product.description}}</p>
+        <h3>Recently Viewed</h3>
+        <div class="related">
+            {% for recent_product in recently_viewed_products %}
+            <img src="{{ recent_product.image_url }}" alt="" class="related_image">
+            {% endfor %}
+        </div>
+    </div> -->
+  <!--footer--->
+  <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-4">Get In Touch</h5>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+          <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-4">Quick Links</h5>
+          <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">About Us</a>
+          <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Contact Us</a>
+          <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/">Our Services</a>
+          <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Privacy Policy</a>
+          <a class="btn btn-link text-white-50" href="http://127.0.0.1:8000/rentee/about/">Terms & Condition</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-4">Photo Gallery</h5>
+          <div class="row g-2 pt-2">
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-1.jpg' %}" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-2.jpg' %}" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-3.jpg' %}" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-4.jpg' %}" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-5.jpg' %}" alt="">
+            </div>
+            <div class="col-4">
+              <img class="img-fluid rounded bg-light p-1" src="{% static 'property-6.jpg' %}" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5 class="text-white mb-4">House Rentel</h5>
+          <p>Fill a house with love it becomes home.</p>
+          <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+            <button type="button" class="btn btn-danger py-2 position-absolute top-0 end-0 ">SignUp</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="#">House Rental</a>, All Right Reserved.
+
+
+              Designed By <a class="border-bottom" href="">House Rental</a>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Home</a>
+                <a href="">Cookies</a>
+                <a href="">Help</a>
+                <a href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--container for 3 images end-->
+    <script>
+
+      function clickable(imaggeid) {
+        var input = document.getElementById(imaggeid).innerHTML;
+
+        var url = "http://127.0.0.1:8000/rentee/properties/?location=" + input;
+
+
+        window.location.href = decodeURIComponent(url);
+
+
+      }
+
+      var url = "http://127.0.0.1:8000/rentee/properties/type/?Property_type=" + input;
+
+      window.location.href = decodeURIComponent(url);
+
+
+
+
+      function location_clickable(immageid1) {
+        var input1 = document.getElementById(immageid1);
+        var input = input1.value;
+        if (input === '') {
+          alert("Please enter value in input field")
+        }
+        else {
+          var url = "http://127.0.0.1:8000/rentee/properties/?location=" + input;
+
+
+          window.location.href = decodeURIComponent(url);
+        }
+
+
+
+
+      }
+      document.getElementById('search-input12').addEventListener('keydown', function (event) {
+        // Check if the Enter key was pressed
+        if (event.keyCode === 13) {
+          // Trigger the onclick event on the button
+          document.getElementById('search123').click();
+        }
+      });
+      //  recntly_viewed
+      function type_clickable(id) {
+        var imgId = document.getElementById(id);
+        var propId = imgId.getAttribute("id");
+        window.location.href = "http://127.0.0.1:8000/rentee/reviews/?id=" + propId;
+      }
+    </script>
+</body>
+
+</html>

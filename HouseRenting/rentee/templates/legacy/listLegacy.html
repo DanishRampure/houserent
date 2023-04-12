@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+    </script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+     <style>
+        .navbar {
+            height: 50px;
+            background-color: #D82329;
+            display: flex;
+            justify-content: center;
+          }
+          
+          .navContainer {
+            width: 100vw;
+            max-width: 1024px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          
+          .logo {
+            font-weight: 500;
+            font-family: "Roboto", sans-serif;
+            padding-left: 10px;
+            font-size: large;
+          }
+          
+          .navButton {
+            margin-right: 10px;
+            border: solid 3px #febb02;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 15px;
+            color: black;
+            font-family:"Roboto", sans-serif;
+            font-weight: 500;
+          }
+          .header {
+            background-color: #D82329;
+            color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+          }
+          
+          .headerContainer {
+            width: 100%;
+            max-width: 1024px;
+            margin: 20px 0px 100px 0px;
+          }
+          
+          .headerContainer.listMode {
+            margin: 20px 0px 0px 0px;
+          }
+          
+          .headerList {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+          }
+          
+          .headerListItem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          
+          .headerListItem.active {
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 20px;
+          }
+          
+          .headerDesc {
+            margin: 20px 0px;
+          }
+          
+          .headerBtn {
+            background-color: #D82329;
+            color: white;
+            font-weight: 500;
+            border: none;
+            padding: 9px;
+            cursor: pointer;
+            border-radius: 0px 14px 14px 0px;
+          }
+          
+          .headerSearch {
+            height: 30px;
+            background-color: white;
+            border: 3px solid #febb02;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1px 0px;
+            border-radius: 15px;
+            position: relative;
+            bottom: -25px;
+            width: 80%;
+            max-width: 100%;
+          }
+          
+          .headerIcon {
+            color: lightgray;
+          }
+          
+          .headerSearchItem {
+            display: flex; 
+            align-items: center;
+            margin-left:5px;
+            gap: 10px;
+          }
+          
+          .headerSearchInput {
+            border: none;
+            outline: none;
+          }
+          
+          .headerSearchText {
+            color: lightgray;
+            cursor: pointer;
+          }
+          .listContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+          }
+          
+          .listWrapper {
+            width: 100%;
+            max-width: 1024px;
+            display: flex;
+            gap: 20px;
+          }
+          
+          .listSearch {
+            flex: 1;
+            background-color: #febb02;
+            padding: 10px;
+            border-radius: 10px;
+            position: sticky;
+            top: 10px;
+            height: max-content;
+          }
+          .sort{
+            padding: 10px;
+            background-color: white;
+            border-radius: 15px;
+            border:none;
+            color: black;
+          }
+          .lsTitle{
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 10px;
+          }
+          
+          .lsItem{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 10px;
+          }
+          
+          .lsItem>label{
+            font-size: 12px;
+          }
+          
+          .lsItem>input{
+            height: 30px;
+            border: none;
+            padding: 5px;
+          }
+          .lsItem>span{
+            height: 30px;
+            padding: 5px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+          
+          .lsOptions{
+            padding: 10px;
+          }
+          
+          .lsOptionItem{
+            display: flex;
+            justify-content:space-between;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 12px;
+          }
+          
+          .lsOptionInput{
+            width: 50px;
+            border-radius: 6px;
+            border: none;
+          }
+          
+          .listSearch>button{
+            padding: 10px;
+            background-color: #D82329;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            width: 100%;
+            font-weight: 500;
+            cursor: pointer;
+          }
+          
+          .listResult {
+            flex: 3;
+          }
+          
+          .searchItem {
+            border: 1px solid lightgray;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+          }
+          
+          .siImg {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          }
+          
+          .siDesc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 2;
+          }
+          
+          .siTitle {
+            font-size: 20px;
+            color: #0071c2;
+          }
+          
+          .siDistance {
+            font-size: 12px;
+          }
+          
+          .siTaxiOp {
+            font-size: 12px;
+            background-color: #008009;
+            color: white;
+            width: max-content;
+            padding: 3px;
+            border-radius: 5px;
+          }
+          
+          .siSubtitle{
+            font-size: 12px;
+            font-weight: bold;
+          }
+          
+          .siFeatures{
+            font-size: 12px;
+          }
+          
+          .siCancelOp{
+            font-size: 12px;
+            color: #008009;
+            font-weight: bold;
+          }
+          
+          .siCancelOpSubtitle{
+            font-size: 12px;
+            color: #008009;
+          }
+          
+          .siDetails {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between
+          }
+          
+          .siRating{
+            display: flex;
+            justify-content: right;
+          }
+          
+          .siRating>span{
+            font-weight: 300;
+            padding: 0px 10px 0px 0px;
+          }
+          .siRating>button{
+           background-color: black;
+           color: white;
+           padding: 5px;
+           border-radius: 6px;
+           font-weight: bold;
+           border: none;
+          }
+          
+          .siDetailTexts{
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+          }
+          
+          .siPrice{
+            font-size: 24px;
+          }
+          
+          .siTaxOp{
+            font-size: 12px;
+            color: gray;
+          }
+          
+          .siCheckButton{
+            background-color: #D82329;
+            color: white;
+            font-weight: bold;
+            padding: 10px 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+          }
+          .footer_container {
+              background-color: #D82329;
+              width: 100vw;
+          }
+          
+          .footerTitle{
+              padding-top: 30px;
+              font-size: 20px;
+              font-weight: 500;
+              color: white;
+              margin-top: 100px;
+              text-align: center;
+              font-family:"Roboto", sans-serif;
+          }
+          
+          .footer{
+            width: 100%;
+            width: 100vw;
+            font-size: 12px;
+          }
+          
+          .fLists{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+          }
+          
+          .fList{
+            list-style: none;
+            padding: 30px;
+          }
+          
+          .fListItem{
+            margin-bottom: 10px;
+            color: white;
+            cursor: pointer;
+          }
+          .fText{
+              color: white;
+              text-align: center;
+              padding:0px;
+              margin-top:0px;
+              padding-bottom: 20px;
+              font-size: x-small;
+              font-family:"Roboto", sans-serif;
+          }
+     </style>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="list.css" />
+  </head>
+  <body>
+    <!-- navbar start -->
+    <div class="navbar">
+      <div class="navContainer">
+        <span class="logo">HouseRenting</span>
+        <div class="navItems">
+          <!-- <button class="navButton">Register</button> -->
+          <button class="navButton">Logout</button>
+        </div>
+      </div>
+    </div>
+    <!-- navbar end -->
+    <!-- header start -->
+    <div class="header">
+      <div>
+        <h1 class="headerTitle">Look at the best properties...</h1>
+        <p class="headerDesc">
+          Talk directly with the owners without any middle men and get the best deals currated for you.
+        </p>
+        <div class="headerSearch">
+          <div class="headerSearchItem">
+            <input
+              type="text"
+              placeholder="Location"
+              class="headerSearchInput"
+            />
+          </div>
+          <div class="headerSearchItem">
+            <button class="headerBtn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+    
+    <div>
+      <div class="listContainer">
+        <div class="listWrapper">
+          <div class="listSearch">
+            <div class="lsItem">
+                <h1 class="lsTitle">Sort By:</h1>
+                <select class="sort">
+                <option value="newest">High Ratings</Option>
+            <option value="asc">Price: Low to High</Option>
+            <option value="desc">Price: High to Low</Option>
+          </select>
+              <h1 class="lsTitle">Filter By:</h1>
+              <div class="lsOptions">
+                 <div class="lsOptionItem">
+                    <input type="checkbox">
+                  <span class="lsOptionText">Furnished</span>
+                  <input type="radio" name="yes_no" checked>Yes</input>
+                  <input type="radio" name="yes_no">No</input>
+                </div>
+                <div class="lsOptionItem">
+                    <input type="checkbox">
+                  <span class="lsOptionText">
+                    Min price <small>(per month)</small>
+                  </span>
+                  <input type="number" class="lsOptionInput" />
+                </div>
+                <div class="lsOptionItem">
+                    <input type="checkbox">
+                  <span class="lsOptionText">
+                    Max price <small>(per month)</small>
+                  </span>
+                  <input type="number" class="lsOptionInput" />
+                </div>
+                <div class="lsOptionItem">
+                    <input type="checkbox">
+                  <span class="lsOptionText">BHK</span>
+                  <input
+                    type="number"
+                    min="{1}"
+                    class="lsOptionInput"
+                    placeholder=""
+                  />
+                </div>
+                <div class="lsOptionItem">
+                    <input type="checkbox">
+                  <span class="lsOptionText">Room</span>
+                  <input
+                    type="number"
+                    min="{1}"
+                    class="lsOptionInput"
+                    placeholder=""
+                  />
+                </div>
+              </div>
+            </div>
+            <button>Search</button>
+          </div>
+          <div class="listResult">
+            <!-- item start -->
+            {% for property in properties %}
+            <div class="searchItem">
+              <img
+                src=   {{property.img.url}} 
+                alt="image"
+                class="siImg"
+              />
+              <div class="siDesc">
+                <h1 class="siTitle">{{property.flat_name}}</h1>
+                <span class="siDistance" style="font-size:medium; margin-top:-15px; ">{{property.description}}</span>
+                {% if property.furnished  %}
+                <span class="siTaxiOp" style="font-size:medium;"  >furnished</span>
+                {% else %}
+                <span class="siTaxiOp"  style="font-size:medium;" >Unfurnished</span>
+                {% endif %}
+                <span class="siSubtitle" style="font-size:medium;">
+                  {{property.city}}
+                </span>
+                <span class="siFeatures" >
+                  {{property.property_type}} 
+                  <br>
+                <span class="siCancelOp"  style="font-size:medium;"  > bond: {{property.bond}} Year </span>
+                <br>
+                <span class="siCancelOpSubtitle"  style="font-size:medium;" >
+                  You can book now, by contacting with the owner.
+                </span>
+              </div>
+              <div class="siDetails">
+                <div class="siRating">
+                  <span>Excellent</span>
+                  <button>8.9</button>
+                </div>
+                <div class="siDetailTexts">
+                  <span class="siPrice">₹{{property.rent_amount}}/month</span>
+                  <span class="siTaxOp">Includes taxes and fees</span>
+                  <button class="siCheckButton check" id = {{property.id}}>View Details</button>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- item end -->
+            <div class="searchItem">
+              <img
+                src="https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1"
+                alt="image"
+                class="siImg"
+              />
+              <div class="siDesc">
+                <h1 class="siTitle">2 BHK Apartment for Rent in Patel Heritage, Kharghar</h1>
+                <span class="siDistance">Good society with good communities member biggest flats ...</span>
+                
+
+                <span class="siSubtitle">
+                  New Delhi
+                </span>
+                <span class="siFeatures">
+                  2BHK • Bathrooms: 1 • Area: 800 sqft 
+                </span>
+                <span class="siCancelOp">bond: 3 months </span>
+                <span class="siCancelOpSubtitle">
+                  You can book now, by contacting with the owner.
+                </span>
+              </div>
+              <div class="siDetails">
+                <div class="siRating">
+                  <span>Excellent</span>
+                  <button>8.9</button>
+                </div>
+                <div class="siDetailTexts">
+                  <span class="siPrice">₹12000/month</span>
+                  <span class="siTaxOp">Includes taxes and fees</span>
+                  <button class="siCheckButton">Contact Owner/Agent</button>
+                </div>
+              </div>
+            </div>
+            <div class="searchItem">
+              <img
+                src="https://cf.bstatic.com/xdata/images/hotel/square600/261707778.webp?k=fa6b6128468ec15e81f7d076b6f2473fa3a80c255582f155cae35f9edbffdd78&o=&s=1"
+                alt="image"
+                class="siImg"
+              />
+              <div class="siDesc">
+                <h1 class="siTitle">2 BHK Apartment for Rent in Patel Heritage, Kharghar</h1>
+                <span class="siDistance">Good society with good communities member biggest flats ...</span>
+                <span class="siTaxiOp">Unfurnished</span>
+                <span class="siSubtitle">
+                  New Delhi
+                </span>
+                <span class="siFeatures">
+                  2BHK • Bathrooms: 1 • Area: 800 sqft 
+                </span>
+                <span class="siCancelOp">bond: 3 months </span>
+                <span class="siCancelOpSubtitle">
+                  You can book now, by contacting with the owner.
+                </span>
+              </div>
+              <div class="siDetails">
+                <div class="siRating">
+                  <span>Excellent</span>
+                  <button>8.9</button>
+                </div>
+                <div class="siDetailTexts">
+                  <span class="siPrice">₹12000/month</span>
+                  <span class="siTaxOp">Includes taxes and fees</span>
+                  <button class="siCheckButton">Contact Owner/Agent</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <!-- Footer start -->
+      <div class="footer_container">
+        <h1 class="footerTitle">HouseRenting</h1>
+      <div class="footer">
+        <div class="fLists">
+          <ul class="fList">
+            <li class="fListItem">Countries</li>
+            <li class="fListItem">Cites</li>
+            <li class="fListItem">Regions</li>
+            <li class="fListItem">Streets</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Houses</li>
+            <li class="fListItem">Apartments</li>
+            <li class="fListItem">Hostels</li>
+            <li class="fListItem">Penthouses</li>
+            <li class="fListItem">Studio Apartments</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Unique places to stay</li>
+            <li class="fListItem">Best Locations</li>
+            <li class="fListItem">Cheapest locations</li>
+            <li class="fListItem">Luxury properties</li>
+            <li class="fListItem">Best deals</li>
+          </ul>
+          <ul class="fList">
+            <li class="fListItem">Car rental</li>
+            <li class="fListItem">Flight Finder</li>
+            <li class="fListItem">Restaurant reservations</li>
+            <li class="fListItem">Agents</li>
+          </ul>
+          <ul class="fList">
+          <li class="fListItem">Customer Service</li>
+          <li class="fListItem">Help</li>
+          <li class="fListItem">Press center</li>
+          <li class="fListItem">Safety standards</li>
+          <li class="fListItem">Terms & conditions</li>
+        </ul>
+        </div>
+      </div>
+      <div class="fText">Copyright © 2023.</div>
+      </div>
+      <!-- footer ends -->
+      <script>
+        $(".check").click(function(){
+            var id  = $(this).attr("id");
+            window.location.href = "http://127.0.0.1:8000/property?id="+id;
+        });
+      </script>
+  </body>
+</html>
